@@ -46,3 +46,9 @@ void PrintNodeInfo(ElemType elemtype)
     //printf("ID\t姓名\t年龄\n");
     printf("%d\t%s\t%d\n",elemtype.id,elemtype.name,elemtype.age);
 }
+
+//打印顺序表信息
+void PrintList(DSList* list)
+{
+    
+}
