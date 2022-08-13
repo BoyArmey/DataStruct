@@ -13,7 +13,5 @@ ElemType GetElement();
 //打印结点的数据信息
 void PrintNodeInfo(ElemType elemtype);
 
-//打印顺序表信息
-void PrintList(SSList list);
 
 #endif

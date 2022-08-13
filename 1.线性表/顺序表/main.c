@@ -8,7 +8,7 @@ int main()
     ElemType datas[4] = {
         {"0001","tom",19},
         {"0002","Ailsa",18},
-        {"0003","张三",19},
+        {"0003","小明",19},
         {"0004","小红",18}
     };
 
@@ -19,8 +19,10 @@ int main()
     //添加数据
     SequentialListAdd(&list,datas[0]);
     SequentialListAdd(&list,datas[1]);
+    SequentialListAdd(&list,datas[2]);
+    SequentialListAdd(&list,datas[3]);
     
     //打印顺序表
-    PrintList(list);
+    SequentialListShow(list);
     return 0;
 }

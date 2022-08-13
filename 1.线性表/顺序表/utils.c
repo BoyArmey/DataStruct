@@ -47,14 +47,3 @@ void PrintNodeInfo(ElemType elemtype)
     //printf("ID\t姓名\t年龄\n");
     printf("%-10s\t%-10s\t%-10d\n",elemtype.id,elemtype.name,elemtype.age);
 }
-
-//打印顺序表信息
-void PrintList(SSList list)
-{
-    int i;
-    for (i = 0; i < list.length; i++)
-    {
-        PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
-    }
-    printf("当前顺序表长度为：%d",list.length);
-}

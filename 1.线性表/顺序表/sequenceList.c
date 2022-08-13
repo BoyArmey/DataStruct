@@ -40,3 +40,21 @@ int SequentialListAdd(SSList *list,ElemType element)
     list->length += 1;                          // 顺序表长度加1
     return TRUE;   //添加成功
 }
+
+/**
+ * @brief 输出所有结点的信息
+ * 
+ * @param list 
+ * @return void 
+ */
+void SequentialListShow(SSList list)
+{
+    int i;
+    for (i = 0; i < list.length; i++)
+    {
+        PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
+    }
+    printf("当前顺序表长度为：%d",list.length);
+}
+
+
