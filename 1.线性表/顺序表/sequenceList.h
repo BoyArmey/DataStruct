@@ -29,9 +29,9 @@ int SequentialListInit(SSList *list);
 int SequentialListAdd(SSList *list,ElemType element);
 // 显示所有的结点
 void SequentialListShow(SSList list);
-// 插入节点
+// 插入结点
 int SequentialListInsert(SSList *list,int index,ElemType element);
-// 删除节点
+// 删除结点
 int SequentialListDelete(SSList *list,int delIndex);
 //根据下标查找结点
 int SequentialListSearchByIndex(SSList *list,int index,ElemType *element);
