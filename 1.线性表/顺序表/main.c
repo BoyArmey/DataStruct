@@ -25,14 +25,26 @@ int main()
     SequentialListAdd(&list,datas[1]);
     SequentialListAdd(&list,datas[2]);
     SequentialListAdd(&list,datas[3]);
+    printf("\n---------------------------添加数据----------------------------\n");
+    SequentialListShow(list);
+
     
     // 插入数据
     SequentialListInsert(&list,1,datas[4]);     // 首部插入
     SequentialListInsert(&list,3,datas[5]);     // 中间插入
     SequentialListInsert(&list,7,datas[6]);     // 尾部插入
+    printf("\n---------------------------插入数据----------------------------\n");
+    SequentialListShow(list);
 
+
+    // 删除数据
+    SequentialListDelete(&list,7);          // 删除尾部元素
+    SequentialListDelete(&list,3);          // 删除中间元素
+    SequentialListDelete(&list,1);          // 删除头部元素
+    printf("\n---------------------------插入数据----------------------------\n");
+    SequentialListShow(list);
 
     // 输出顺序表结点信息
-    SequentialListShow(list);
+    //SequentialListShow(list);
     return 0;
 }

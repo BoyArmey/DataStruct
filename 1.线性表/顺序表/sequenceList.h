@@ -38,13 +38,13 @@ int SequentialListSearchByIndex(SSList *list,int index,ElemType *element);
 //根据ID查找结点
 int SequentialListSearchById(SSList *list, int id, ElemType *element);
 //求顺序表的长度
-int GetSequentialListLength(SSList *list);
+int GetSequentialListLength(SSList list);
 //清空顺序表
 int SequentialListClear(SSList *list);
 //销毁顺序表
 void SequentialListDestroy(SSList *list);
 //判断顺序表是否为空表
-int SequentialListIsEmpty(SSList *list);
+int SequentialListIsEmpty(SSList list);
 
 
 
