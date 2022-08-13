@@ -58,3 +58,48 @@ void SequentialListShow(SSList list)
 }
 
 
+/**
+ * @brief   插入结点
+ *          1）判断顺序表是否已满
+ *          2）判断插入位置是否越界：0 <= index-1 <= length
+ *              注：程序从0开始，站在用户角度为1开始，因此index需要减1
+ *          3）插入下标位置后面的元素依次后移一位
+ *          4）插入新元素
+ *          5）插入成功后，顺序表长度加1
+ * 
+ * @param list 
+ * @param index     下标 
+ * @param element   数据
+ * @return int 
+ */
+int SequentialListInsert(SSList *list,int index,ElemType element)
+{
+    int i;      // 用于后移元素
+    // 1）判断顺序表是否已满
+    if(list->length >= MAXSIZE)
+    {
+        printf("顺序表已满，无法继续添加数据!");
+        return FALSE;   //添加失败
+    }
+
+    // 2）判断插入位置是否越界
+    if(((index-1) < 0)||((index-1) > list->length))
+    {
+        printf("插入位置不合法，请重新输入!");
+        return FALSE;
+    }
+
+    // 3）待插入元素位置后面的元素依次向后后移一位
+    for(i = list->length; i >= index; i--)
+    {
+        list->data[i] = list->data[i-1];
+    }
+
+    // 4）插入数据
+    list->data[index-1] = element;
+
+    // 5）长度加1
+    list->length += 1;
+
+    return TRUE;    //插入成功
+}
