@@ -90,7 +90,7 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
     }
 
     // 3）待插入元素位置后面的元素依次向后后移一位
-    for(i = list->length; i >= index; i--)
+    for(i = list->length; i > index; i--)
     {
         list->data[i] = list->data[i-1];
     }

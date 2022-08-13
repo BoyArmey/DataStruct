@@ -28,8 +28,9 @@ int main()
     
     // 插入数据
     SequentialListInsert(&list,1,datas[4]);     // 首部插入
-    SequentialListInsert(&list,6,datas[5]);     // 尾部插入
-    SequentialListInsert(&list,3,datas[6]);     // 中间插入
+    SequentialListInsert(&list,3,datas[5]);     // 中间插入
+    SequentialListInsert(&list,7,datas[6]);     // 尾部插入
+
 
     // 输出顺序表结点信息
     SequentialListShow(list);
