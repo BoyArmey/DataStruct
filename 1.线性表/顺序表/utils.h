@@ -14,6 +14,6 @@ ElemType GetElement();
 void PrintNodeInfo(ElemType elemtype);
 
 //打印顺序表信息
-void PrintList(DSList* list);
+void PrintList(SSList list);
 
 #endif

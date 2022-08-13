@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "utils.h"
+#include "sequenceList.h"
 
 
 /**
@@ -44,11 +45,16 @@ ElemType GetElement()
 void PrintNodeInfo(ElemType elemtype)
 {
     //printf("ID\t姓名\t年龄\n");
-    printf("%d\t%s\t%d\n",elemtype.id,elemtype.name,elemtype.age);
+    printf("%-10s\t%-10s\t%-10d\n",elemtype.id,elemtype.name,elemtype.age);
 }
 
 //打印顺序表信息
-void PrintList(DSList* list)
+void PrintList(SSList list)
 {
-    //待更新
+    int i;
+    for (i = 0; i < list.length; i++)
+    {
+        PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
+    }
+    printf("当前顺序表长度为：%d",list.length);
 }
