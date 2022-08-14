@@ -41,8 +41,10 @@ int main()
     SequentialListDelete(&list,7);          // 删除尾部元素
     SequentialListDelete(&list,3);          // 删除中间元素
     SequentialListDelete(&list,1);          // 删除头部元素
-    printf("\n---------------------------插入数据----------------------------\n");
+    SequentialListDelete(&list,6);
+    printf("\n---------------------------删除数据----------------------------\n");
     SequentialListShow(list);
+
 
     // 输出顺序表结点信息
     //SequentialListShow(list);

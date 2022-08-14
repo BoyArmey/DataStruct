@@ -148,7 +148,7 @@ int SequentialListDelete(SSList *list,int index)
     {
         list->data[i] = list->data[i+1];
     }
-
+    
     // 5）长度减1
     list->length -= 1;
 
