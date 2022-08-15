@@ -15,8 +15,12 @@ int main()
         {"0006","test2",18},
         {"0007","test3",18}
     };
+    /*  手动输入数据
+        GetElement();
+    */
+   
 
-    ElemType elem1,elem2,elem3,elem4;     // 接收查找到的数据
+    ElemType elem1;     // 接收查找到的数据
 
     SSList list;
     // 初始化顺序表
@@ -32,6 +36,13 @@ int main()
 
     
     // 插入数据
+    /* 手动输出下标进行删除
+    int index;
+    printf("请输出查找下标:");
+    scanf("%d",&index);
+    SequentialListInsert(&list,index,datas[4]);
+    */
+    
     SequentialListInsert(&list,1,datas[4]);     // 首部插入
     SequentialListInsert(&list,3,datas[5]);     // 中间插入
     SequentialListInsert(&list,7,datas[6]);     // 尾部插入
@@ -40,6 +51,13 @@ int main()
 
 
     // 删除数据
+    /* 手动输出下标进行删除
+    int index;
+    printf("请输出查找下标:");
+    scanf("%d",&index);
+    SequentialListDelete(&list,index);
+    */
+    
     SequentialListDelete(&list,7);          // 删除尾部元素
     SequentialListDelete(&list,3);          // 删除中间元素
     SequentialListDelete(&list,1);          // 删除头部元素
@@ -48,6 +66,17 @@ int main()
 
 
     // 按指定下标查找数据
+
+    /* 手动输出下标进行查找
+    int index;
+    printf("请输出查找下标:");
+    scanf("%d",&index);
+    if(SequentialListSearchByIndex(list,index,&elem1))
+    {
+        PrintNodeInfo(elem1);
+    } 
+    */
+
     printf("\n---------------------------按指定下标查找数据----------------------------\n");
     /* SequentialListSearchByIndex()返回值为TRUE或FALSE，所以使用if判断是否查找到元素 */
     // 查找首元素
@@ -67,6 +96,16 @@ int main()
     }
 
     // 按指定下标查找数据
+    /* 手动输出id进行查找
+    char inputId[5];
+    printf("请输出查找id:");
+    scanf("%s",inputId);
+    if(SequentialListSearchByIndex(list,index,&elem1))
+    {
+        PrintNodeInfo(elem1);
+    } 
+    */
+
     printf("\n---------------------------按指定id查找数据----------------------------\n");
     // 查找id为"0003"的结点信息
     if(SequentialListSearchById(list,"0003",&elem1))
