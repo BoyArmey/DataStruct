@@ -1,5 +1,6 @@
 {
     "files.associations": {
         "sequentiallist.h": "c"
-    }
+    },
+    "commentTranslate.targetLanguage": "zh-CN"
 }
