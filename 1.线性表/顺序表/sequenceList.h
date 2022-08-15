@@ -33,17 +33,17 @@ void SequentialListShow(SSList list);
 int SequentialListInsert(SSList *list,int index,ElemType element);
 // 删除结点
 int SequentialListDelete(SSList *list,int delIndex);
-//根据下标查找结点
+// 根据下标查找结点
 int SequentialListSearchByIndex(SSList list,int index,ElemType *element);
-//根据ID查找结点
+// 根据ID查找结点
 int SequentialListSearchById(SSList list, char* id, ElemType *element);
-//求顺序表的长度
+// 顺序表元素逆序
+int SequentialListInverse(SSList *list);
+// 求顺序表的长度
 int GetSequentialListLength(SSList list);
-//清空顺序表
+// 清空顺序表
 int SequentialListClear(SSList *list);
-//销毁顺序表
-void SequentialListDestroy(SSList *list);
-//判断顺序表是否为空表
+// 判断顺序表是否为空表
 int SequentialListIsEmpty(SSList list);
 
 

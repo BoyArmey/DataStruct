@@ -234,3 +234,78 @@ int SequentialListSearchById(SSList list, char* id, ElemType *element)
 
     return TRUE;
 }
+
+/**
+ * @brief   顺序表元素逆序
+ *          1）判断是否为空表
+ *          2）元素交换
+ *              注：第0个元素与第n个元素交换；第1个元素与第n-1个元素交换。即遍历次数为顺序表长度的一半：length/2
+ *          3) 每一轮交换完毕后，指向顺序表首元素的下标加1；指向顺序表最后元素的下标减1
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListInverse(SSList *list)
+{
+    int i;                          // 循环变量,用于交换元素时的遍历
+    int begin = 0;                  // 指向顺序表的第一个元素
+    int end = (list->length - 1);   // 指向顺序表最后一个元素
+    ElemType elem;                  // 交换时的中间变量
+
+    // 1）判断是否为空表
+    if(list->length == 0)
+    {
+        printf("\n顺序表为空,无法进行逆序操作\n");
+        return FALSE;   //操作失败
+    }
+    // 2）元素交换
+    for(i = 0; i < (list->length / 2); i++)
+    {
+        // 交换结点
+        SwapNodeInfo(&elem,&(list->data[begin]));
+        SwapNodeInfo(&(list->data[begin]),&(list->data[end]));
+        SwapNodeInfo(&(list->data[end]),&elem);
+        
+        // 移动下标
+        begin += 1;
+        end -= 1;
+    }
+    return TRUE;    // 操作成功
+}
+
+/**
+ * @brief   求顺序表的长度
+ * 
+ * @param list 
+ * @return int  顺序表长度
+ */
+int GetSequentialListLength(SSList list)
+{
+    return list.length;
+}
+
+/**
+ * @brief   清空顺序表
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListClear(SSList *list)
+{
+    list->length = 0;
+}
+
+/**
+ * @brief   判断顺序表是否为空表
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListIsEmpty(SSList list)
+{
+    if(list.length == 0)
+    {
+        return TRUE;    // 空表
+    }
+    return FALSE;       // 非空表
+}

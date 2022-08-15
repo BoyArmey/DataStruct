@@ -74,6 +74,14 @@ int main()
         PrintNodeInfo(elem1);
     }
 
+    // 顺序表元素逆序
+    printf("\n---------------------------逆序结果----------------------------\n");
+    /* 默认为偶数交换测试，取消下面一行注释，可进行奇数个元素交换逆序测试 */ 
+    //SequentialListAdd(&list,datas[4]);
+    if(SequentialListInverse(&list))
+    {
+        SequentialListShow(list);
+    }
 
 
     // 输出顺序表结点信息
