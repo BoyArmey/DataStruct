@@ -157,15 +157,36 @@ int SequentialListDelete(SSList *list,int index)
 
 /**
  * @brief   根据下标查找结点
- *          1）判断下标是否合法
+ *          1）将用户角度的下标转为程序角度的下标：index = index - 1
+ *              注：程序从0开始，用户角度为从1开始，因此index需要减1
+ *          2）判断顺序表是否为空表
+ *          3）判断下标是否合法
  * 
  * @param list 
  * @param index     下标
  * @param element   查找到的元素
  * @return int 
  */
-int SequentialListSearchByIndex(SSList *list,int index,ElemType *element)
+int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
 {
+    // 1）将用户角度的下标转为程序角度的下标
+    index = index - 1;
+
+    // 2）判断顺序表是否为空表
+    if(list.length == 0)
+    {
+        printf("\n顺序表为空,无法进行查找操作\n");
+        return FALSE;   //删除失败
+    }
+
+    // 3）判断下标是否合法
+    if((index < 0)||(index >= list.length))
+    {
+        printf("\n查找位置不合法，请重新输入!\n");
+        return FALSE;   //删除失败
+    }
+
+    // 4）查找元素
 
     return TRUE;    // 查找成功
 }

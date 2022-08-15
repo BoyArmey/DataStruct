@@ -34,7 +34,7 @@ int SequentialListInsert(SSList *list,int index,ElemType element);
 // 删除结点
 int SequentialListDelete(SSList *list,int delIndex);
 //根据下标查找结点
-int SequentialListSearchByIndex(SSList *list,int index,ElemType *element);
+int SequentialListSearchByIndex(SSList list,int index,ElemType *element);
 //根据ID查找结点
 int SequentialListSearchById(SSList *list, int id, ElemType *element);
 //求顺序表的长度
