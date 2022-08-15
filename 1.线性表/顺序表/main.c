@@ -55,27 +55,15 @@ int main()
     {
         PrintNodeInfo(elem1);
     }
-    else
-    {
-        printf("\n查找错误!\n");
-    }
     // 查找末尾元素
     if(SequentialListSearchByIndex(list,4,&elem1))
     {
         PrintNodeInfo(elem1);
     }
-    else
-    {
-        printf("\n查找错误!\n");
-    }
     // 查找中间元素
     if(SequentialListSearchByIndex(list,2,&elem1))
     {
         PrintNodeInfo(elem1);
-    }
-    else
-    {
-        printf("\n查找错误!\n");
     }
 
     // 按指定下标查找数据
@@ -84,10 +72,6 @@ int main()
     if(SequentialListSearchById(list,"0003",&elem1))
     {
         PrintNodeInfo(elem1);
-    }
-    else
-    {
-        printf("\n查找错误!\n");
     }
 
 
