@@ -13,5 +13,17 @@
  */
 int SequentialListInit(DSList *list)
 {
-    return TRUE;
+    /* 手动输入申请内存
+    int maxSize;
+    printf("请输入线性表最大容量:");
+    scanf("%d",&maxSize);
+    list->data = (ElemType*)malloc(sizeof(ElemType) * maxSize);
+    */
+
+    list->data = (ElemType*)malloc(sizeof(ElemType) * MAXSIZE);   // 分配内存
+    if(list->data)      // 判断内存是否分配成功
+    {
+        return TRUE;    // 初始化成功
+    }
+    return FALSE;       // 初始化失败
 }

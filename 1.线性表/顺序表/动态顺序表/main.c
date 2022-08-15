@@ -6,6 +6,7 @@
 
 int main()
 {
-
+    DSList list;
+    SequentialListInit(&list);
     return 0;
 }

@@ -28,6 +28,14 @@ typedef struct
     int length;
 }DSList;    //Dynamic Sequence List
 //初始化
-
+int SequentialListInit(DSList *list)
+{
+    list->data = (ElemType*)malloc(sizeof(ElemType) * MAXSIZE);   // 分配内存
+    if(list->data)      // 判断内存是否分配成功
+    {
+        return TRUE;    // 初始化成功
+    }
+    return FALSE;       // 初始化失败
+}
 
 ```
