@@ -13,7 +13,7 @@ typedef struct
 }ElemType;
 
 
-//静态方法定义顺序表的结构
+// 静态方法定义顺序表的结构
 typedef struct
 {
     ElemType data[MAXSIZE+1];
@@ -21,7 +21,7 @@ typedef struct
 }SSList;    //Static Sequence List
 
 
-/* 顺序表的操作函数声明 */
+/* 静态顺序表的操作函数声明 */
 
 // 初始化顺序表
 int SequentialListInit(SSList *list);
