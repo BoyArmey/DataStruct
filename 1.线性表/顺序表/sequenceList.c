@@ -33,7 +33,7 @@ int SequentialListAdd(SSList *list,ElemType element)
 {
     if(list->length >= MAXSIZE)
     {
-        printf("顺序表已满，无法继续添加数据!\n");
+        printf("\n顺序表已满，无法继续添加数据!\n");
         return FALSE;   //添加失败
     }
     list->data[list->length] = element;         // 添加数据
@@ -54,7 +54,7 @@ void SequentialListShow(SSList list)
     {
         PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
     }
-    printf("当前顺序表长度为：%d",list.length);
+    printf("当前顺序表长度为：%d\n",list.length);
 }
 
 
@@ -82,14 +82,14 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
     // 2）判断顺序表是否已满
     if(list->length >= MAXSIZE)
     {
-        printf("顺序表已满，无法继续添加数据!\n");
+        printf("\n顺序表已满，无法继续添加数据!\n");
         return FALSE;   //添加失败
     }
 
     // 3）判断插入位置是否越界
     if((index < 0)||(index > list->length))
     {
-        printf("插入位置不合法，请重新输入!\n");
+        printf("\n插入位置不合法，请重新输入!\n");
         return FALSE;   //添加失败
     }
 
@@ -129,18 +129,18 @@ int SequentialListDelete(SSList *list,int index)
     // 1）将用户角度的下标转为程序角度的下标
     index = index - 1;  
 
-    // 2）判断顺序表是否已满
-    if(list->length >= MAXSIZE)
+    // 2）判断顺序表是否为空表
+    if(list->length == 0)
     {
-        printf("顺序表已满，无法继续添加数据!\n");
-        return FALSE;   //添加失败
+        printf("\n顺序表为空,无法继续删除\n");
+        return FALSE;   //删除失败
     }
 
-    // 3）判断插入位置是否越界
+    // 3）判断删除位置是否越界
     if((index < 0)||(index >= list->length))
     {
-        printf("插入位置不合法，请重新输入!\n");
-        return FALSE;   //添加失败
+        printf("\n删除位置不合法，请重新输入!\n");
+        return FALSE;   //删除失败
     }
 
     // 4）删除元素，即覆盖被删除的元素

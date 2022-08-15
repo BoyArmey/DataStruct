@@ -41,7 +41,6 @@ int main()
     SequentialListDelete(&list,7);          // 删除尾部元素
     SequentialListDelete(&list,3);          // 删除中间元素
     SequentialListDelete(&list,1);          // 删除头部元素
-    SequentialListDelete(&list,6);
     printf("\n---------------------------删除数据----------------------------\n");
     SequentialListShow(list);
 
