@@ -1,5 +1,8 @@
 #ifndef _SEQUENCELIST_H
-#define _SEQUENCELIST_H        
+#define _SEQUENCELIST_H   
+
+//定义顺序表最大存储容量
+#define MAXSIZE 100  
 
 //定义顺序表中结点存储数据的类型
 typedef struct 

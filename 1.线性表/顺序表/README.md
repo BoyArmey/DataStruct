@@ -5,19 +5,29 @@
 ## 定义区别
 
 ```c
-// 静态顺序表定义及初始化
+/* 静态顺序表 */
+// 定义
 typedef struct
 {
     ElemType data[MAXSIZE+1];
     int length;
 }SSList;    //Static Sequence List
+// 初始化
+int SequentialListInit(SSList *list)
+{
+    list->length = 0;
+    return TRUE; 
+}
 
 
-// 动态顺序表定义及初始化
+/* 动态顺序表 */
+//定义
 typedef struct
 {
     ElemType *data;
     int length;
 }DSList;    //Dynamic Sequence List
+//初始化
+
 
 ```
