@@ -16,6 +16,8 @@ int main()
         {"0007","test3",18}
     };
 
+    ElemType elem1,elem2,elem3,elem4;     // 接收查找到的数据
+
     SSList list;
     // 初始化顺序表
     SequentialListInit(&list);
@@ -43,6 +45,51 @@ int main()
     SequentialListDelete(&list,1);          // 删除头部元素
     printf("\n---------------------------删除数据----------------------------\n");
     SequentialListShow(list);
+
+
+    // 按指定下标查找数据
+    printf("\n---------------------------按指定下标查找数据----------------------------\n");
+    /* SequentialListSearchByIndex()返回值为TRUE或FALSE，所以使用if判断是否查找到元素 */
+    // 查找首元素
+    if(SequentialListSearchByIndex(list,1,&elem1))
+    {
+        PrintNodeInfo(elem1);
+    }
+    else
+    {
+        printf("\n查找错误!\n");
+    }
+    // 查找末尾元素
+    if(SequentialListSearchByIndex(list,4,&elem1))
+    {
+        PrintNodeInfo(elem1);
+    }
+    else
+    {
+        printf("\n查找错误!\n");
+    }
+    // 查找中间元素
+    if(SequentialListSearchByIndex(list,2,&elem1))
+    {
+        PrintNodeInfo(elem1);
+    }
+    else
+    {
+        printf("\n查找错误!\n");
+    }
+
+    // 按指定下标查找数据
+    printf("\n---------------------------按指定id查找数据----------------------------\n");
+    // 查找id为"0003"的结点信息
+    if(SequentialListSearchById(list,"0003",&elem1))
+    {
+        PrintNodeInfo(elem1);
+    }
+    else
+    {
+        printf("\n查找错误!\n");
+    }
+
 
 
     // 输出顺序表结点信息

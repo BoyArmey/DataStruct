@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "status.h"
 #include "utils.h"
 #include "sequenceList.h"
@@ -49,7 +50,7 @@ int SequentialListAdd(SSList *list,ElemType element)
  */
 void SequentialListShow(SSList list)
 {
-    int i;
+    int i;  // 循环变量
     for (i = 0; i < list.length; i++)
     {
         PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
@@ -75,7 +76,7 @@ void SequentialListShow(SSList list)
  */
 int SequentialListInsert(SSList *list,int index,ElemType element)
 {
-    int i;      // 用于移动元素时记录下标
+    int i;      // 循环变量，用于移动元素时记录下标
 
     // 1）将用户角度的下标转为程序角度的下标
     index = index - 1;      
@@ -124,7 +125,7 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
  */
 int SequentialListDelete(SSList *list,int index)
 {
-    int i;  // 用于移动元素时记录下标
+    int i;  // 循环变量，用于移动元素时记录下标
 
     // 1）将用户角度的下标转为程序角度的下标
     index = index - 1;  
@@ -161,6 +162,7 @@ int SequentialListDelete(SSList *list,int index)
  *              注：程序从0开始，用户角度为从1开始，因此index需要减1
  *          2）判断顺序表是否为空表
  *          3）判断下标是否合法
+ *          4）返回index对应的结点
  * 
  * @param list 
  * @param index     下标
@@ -169,6 +171,7 @@ int SequentialListDelete(SSList *list,int index)
  */
 int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
 {
+    int i;      // 循环变量
     // 1）将用户角度的下标转为程序角度的下标
     index = index - 1;
 
@@ -176,17 +179,58 @@ int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
     if(list.length == 0)
     {
         printf("\n顺序表为空,无法进行查找操作\n");
-        return FALSE;   //删除失败
+        return FALSE;   //查找失败
     }
 
     // 3）判断下标是否合法
     if((index < 0)||(index >= list.length))
     {
         printf("\n查找位置不合法，请重新输入!\n");
-        return FALSE;   //删除失败
+        return FALSE;   //查找失败
     }
 
-    // 4）查找元素
+    // 4）返回到的查找元素
+    SwapNodeInfo(element,&(list.data[index]));
 
     return TRUE;    // 查找成功
+}
+
+/**
+ * @brief   根据ID查找结点
+ *          1）判断顺序表是否为空表
+ *          2）遍历顺序表，查找对应id元素的下标
+ *          3）返回对应id结点
+ * 
+ * @param list 
+ * @param id        查找id 
+ * @param element   查找到的结点
+ * @return int 
+ */
+int SequentialListSearchById(SSList list, char* id, ElemType *element)
+{
+    int i;          // 循环变量，用于遍历顺序表
+    int index;      // 记录查找到的对应元素的下标
+
+    // 1）判断顺序表是否为空表
+    if(list.length == 0)
+    {
+        printf("\n顺序表为空,无法进行查找操作\n");
+        return FALSE;   //查找失败
+    }
+
+    // 2）遍历顺序表，查找对应id元素的下标
+    for(i = 0; i < list.length; i++)
+    {
+        // strcmp(str1,str2)，若str1=str2，则返回零；若str1<str2，则返回负数；若str1>str2，则返回正数
+        if(strcmp(id,list.data[i].id) == 0)     
+        {
+            index = i;      // 找到对应id的元素，记录下表
+            break;          // 结束循环
+        }
+    }
+
+    // 3）返回对应id结点
+    SwapNodeInfo(element,&(list.data[index]));
+
+    return TRUE;
 }
