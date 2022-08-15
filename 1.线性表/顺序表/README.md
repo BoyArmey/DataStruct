@@ -1,11 +1,11 @@
 # 静态顺序表与到那个太顺序表的区别
 
-两者仅在定义数据结构与初始化时存在较大差别
+两者仅在定义数据结构与初始化时存在较大差别，其他操作差别并不大。
 
 ## 定义区别
 
 ```c
-// 静态顺序表初始化
+// 静态顺序表数据结构定义
 typedef struct 
 {
     char id[10];       //ID
@@ -18,12 +18,12 @@ typedef struct
     int length;
 }SSList;    //Static Sequence List
 
-// 静态顺序表初始化
+// 静态顺序表数据结构定义
 typedef struct 
 {
     char *id;       //ID
     char *name;    //姓名
-    int *age;          //年龄
+    int *age;      //年龄
 }ElemType;
 typedef struct
 {
