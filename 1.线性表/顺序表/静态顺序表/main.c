@@ -122,8 +122,5 @@ int main()
         SequentialListShow(list);
     }
 
-
-    // 输出顺序表结点信息
-    //SequentialListShow(list);
     return 0;
 }
