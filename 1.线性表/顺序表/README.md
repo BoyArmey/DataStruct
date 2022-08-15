@@ -5,26 +5,15 @@
 ## 定义区别
 
 ```c
-// 静态顺序表数据结构定义
-typedef struct 
-{
-    char id[10];       //ID
-    char name[20];    //姓名
-    int age;          //年龄
-}ElemType;
+// 静态顺序表定义及初始化
 typedef struct
 {
     ElemType data[MAXSIZE+1];
     int length;
 }SSList;    //Static Sequence List
 
-// 静态顺序表数据结构定义
-typedef struct 
-{
-    char *id;       //ID
-    char *name;    //姓名
-    int *age;      //年龄
-}ElemType;
+
+// 动态顺序表定义及初始化
 typedef struct
 {
     ElemType *data;
