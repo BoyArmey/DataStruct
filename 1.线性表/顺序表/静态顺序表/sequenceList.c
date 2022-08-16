@@ -24,8 +24,9 @@ int SequentialListInit(SSList *list)
 /**
  * @brief   添加结点
  *          1）判断顺序表是否已满
- *          2）未满，则添加数据，并且顺序表长度加1
- *          3）
+ *          2）未满，则添加数据
+ *          3）顺序表长度加1
+ * 
  * @param list 
  * @param element 
  * @return int 
@@ -37,8 +38,13 @@ int SequentialListAdd(SSList *list,ElemType element)
         printf("\n顺序表已满，无法继续添加数据!\n");
         return FALSE;   //添加失败
     }
-    list->data[list->length] = element;         // 添加数据
-    list->length += 1;                          // 顺序表长度加1
+
+    // 2）添加数据
+    list->data[list->length] = element;
+    
+    // 3）顺序表长度加1
+    list->length += 1;
+    
     return TRUE;   //添加成功
 }
 

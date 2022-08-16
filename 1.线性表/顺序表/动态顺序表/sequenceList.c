@@ -16,7 +16,7 @@
  */
 int SequentialListInit(DSList *list)
 {
-    /* 手动输入申请内存
+    /* 手动输入申请内存【如果手动输入顺序表最大容量，后面判断线性表是否已满需要修改相对于的判断条件】
     int maxSize;
     printf("请输入线性表最大容量:");
     scanf("%d",&maxSize);
@@ -30,4 +30,40 @@ int SequentialListInit(DSList *list)
         return TRUE;        // 初始化成功
     }
     return FALSE;       // 初始化失败
+}
+
+
+/**
+ * @brief   添加结点
+ *          1）判断顺序表是否已满
+ *          2）未满，则添加数据
+ *          3）顺序表长度加1
+ * 
+ * @param list      
+ * @param element   结点数据
+ * @return int 
+ */
+int SequentialListAdd(DSList *list,ElemType element)
+{
+    // 1）判断顺序表是否已满
+    if(list->length == MAXSIZE)
+    {
+        printf("\n\n顺序表已满，无法继续添加数据!\n");
+        return FALSE;
+    }
+
+    // 2）添加数据
+    list->data[list->length] = element;
+
+    // 3）顺序表长度加1
+    list->length += 1;
+
+    return TRUE;
+
+}
+
+// 显示所有的结点
+void SequentialListShow(DSList list)
+{
+    
 }
