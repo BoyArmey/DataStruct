@@ -99,6 +99,7 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
 
     // 1）将用户角度的下标转为程序角度的下标
     index = index - 1;      
+
     // 2）判断顺序表是否已满
     if(list->length >= MAXSIZE)
     {
@@ -114,7 +115,7 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
     }
 
     // 4）待插入元素位置后面的元素依次向后后移一位
-    for(i = list->length; i > index; i--)      // 
+    for(i = list->length; i > index; i--)     
     {
         list->data[i] = list->data[i-1];
     }
@@ -209,6 +210,7 @@ int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
     }
 
     // 4）返回到的查找元素
+    printf("\n下标为%d的结点为:\n",index + 1);      // 将程序角度的index转为用户角度的index
     SwapNodeInfo(element,&(list.data[index]));
 
     return TRUE;    // 查找成功
