@@ -189,6 +189,7 @@ int SequentialListDelete(DSList *list,int index)
     return TRUE;    // 删除成功
 }
 
+
 /**
  * @brief   根据下标查找结点
  *          1）将用户角度的下标转为程序角度的下标：index = index - 1
@@ -225,46 +226,6 @@ int SequentialListSearchByIndex(DSList list,int index,ElemType *element)
     // 4）返回到的查找元素
     printf("\n下标为%d的结点为:\n",index + 1);      // 将程序角度的index转为用户角度的index
     SwapNodeInfo(element,(list.data + index));
-
-    return TRUE;    // 查找成功
-}
-
-/**
- * @brief   根据下标查找结点
- *          1）将用户角度的下标转为程序角度的下标：index = index - 1
- *              注：程序从0开始，用户角度为从1开始，因此index需要减1
- *          2）判断顺序表是否为空表
- *          3）判断下标是否合法
- *          4）返回index对应的结点
- * 
- * @param list 
- * @param index     下标
- * @param element   查找到的元素
- * @return int 
- */
-int SequentialListSearchByIndex(DSList list,int index,ElemType *element)
-{
-    int i;      // 循环变量
-    // 1）将用户角度的下标转为程序角度的下标
-    index = index - 1;
-
-    // 2）判断顺序表是否为空表
-    if(list.length == 0)
-    {
-        printf("\n顺序表为空,无法进行查找操作\n");
-        return FALSE;   //查找失败
-    }
-
-    // 3）判断下标是否合法
-    if((index < 0)||(index >= list.length))
-    {
-        printf("\n查找位置不合法，请重新输入!\n");
-        return FALSE;   //查找失败
-    }
-
-    // 4）返回到的查找元素
-    printf("\n下标为%d的结点为:\n",index + 1);      // 将程序角度的index转为用户角度的index
-    SwapNodeInfo(element,&(list.data[index]));
 
     return TRUE;    // 查找成功
 }
@@ -307,4 +268,99 @@ int SequentialListSearchById(DSList list, char* id, ElemType *element)
     SwapNodeInfo(element,(list.data + index));
 
     return TRUE;
+}
+
+/**
+ * @brief   顺序表元素逆序
+ *          1）判断是否为空表
+ *          2）元素交换
+ *              注：第0个元素与第n个元素交换；第1个元素与第n-1个元素交换。即遍历次数为顺序表长度的一半：length/2
+ *          3) 每一轮交换完毕后，指向顺序表首元素的下标加1；指向顺序表最后元素的下标减1
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListInverse(DSList *list)
+{
+    int i;                          // 循环变量,用于交换元素时的遍历
+    int begin = 0;                  // 指向顺序表的第一个元素
+    int end = (list->length - 1);   // 指向顺序表最后一个元素
+    ElemType elem;                  // 交换时的中间变量
+
+    // 1）判断是否为空表
+    if(list->length == 0)
+    {
+        printf("\n顺序表为空,无法进行逆序操作\n");
+        return FALSE;   //操作失败
+    }
+    // 2）元素交换
+    for(i = 0; i < (list->length / 2); i++)
+    {
+        // 交换结点
+        SwapNodeInfo(&elem,(list->data + begin));
+        SwapNodeInfo((list->data + begin),(list->data + end));
+        SwapNodeInfo((list->data + end),&elem);
+        
+        // 移动下标
+        begin += 1;
+        end -= 1;
+    }
+    return TRUE;    // 操作成功
+}
+
+/**
+ * @brief   求顺序表的长度
+ * 
+ * @param list 
+ * @return int  顺序表长度
+ */
+int GetSequentialListLength(DSList list)
+{
+    return list.length;
+}
+
+/**
+ * @brief   清空顺序表
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListClear(DSList *list)
+{
+    list->length = 0;
+}
+
+/**
+ * @brief   判断顺序表是否为空表
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListIsEmpty(DSList list)
+{
+    if(list.length == 0)
+    {
+        return TRUE;    // 空表
+    }
+    return FALSE;       // 非空表
+}
+
+/**
+ * @brief   销毁顺序表
+ *          1）判断顺序表是否存在
+ *          2）存在，释放内存
+ *          3）长度置为0
+ * 
+ * @param list 
+ * @return int 
+ */
+int SequentialListDestroy(DSList *list)
+{
+    if(list)
+    {
+        free(list->data);   // 2）销毁顺序表
+        list->length = 0;   // 3）长度置为0
+        return TRUE;        // 销毁成功
+    }
+    return FALSE;           // 销毁失败
 }

@@ -64,14 +64,26 @@ int main()
         PrintNodeInfo(elem1);
     }
 
-    /* printf("\n---------------------------按指定id查找数据----------------------------\n");
+    printf("\n---------------------------按指定id查找数据----------------------------\n");
     // 查找id为"0003"的结点信息
     if(SequentialListSearchById(list,"0003",&elem1))
     {
         PrintNodeInfo(elem1);
-    } */
+    }
 
+    // 顺序表元素逆序
+    printf("\n---------------------------逆序结果----------------------------\n");
+    /* 默认为偶数交换测试，取消下面一行注释，可进行奇数个元素交换逆序测试 */ 
+    //SequentialListAdd(&list,datas[4]);
+    if(SequentialListInverse(&list))
+    {
+        SequentialListShow(list);
+    }
 
+    // 顺序表元素逆序
+    printf("\n---------------------------销毁顺序表----------------------------\n");
+    SequentialListDestroy(&list);
+    SequentialListShow(list);
     
     return 0;
 }

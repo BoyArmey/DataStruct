@@ -45,6 +45,8 @@ int GetSequentialListLength(DSList list);
 int SequentialListClear(DSList *list);
 // 判断顺序表是否为空表
 int SequentialListIsEmpty(DSList list);
+// 销毁顺序表
+int SequentialListDestroy(DSList *list);
 
 
 
