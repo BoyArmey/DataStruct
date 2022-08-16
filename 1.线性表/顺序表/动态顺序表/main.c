@@ -19,7 +19,7 @@ int main()
 
     ElemType elem1;     // 接收查找到的数据
 
-    DSList list;
+    DSList list,list1;
 
     // 初始化顺序表
     SequentialListInit(&list);
@@ -82,8 +82,14 @@ int main()
 
     // 顺序表元素逆序
     printf("\n---------------------------销毁顺序表----------------------------\n");
-    SequentialListDestroy(&list);
-    SequentialListShow(list);
+    if(SequentialListDestroy(&list1))
+    {
+        printf("\n销毁成功\n");
+    }
+    else
+    {
+       printf("\n销毁失败\n");
+    }
     
     return 0;
 }

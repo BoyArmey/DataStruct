@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <malloc.h>
 #include "status.h"
 #include "utils.h"
 #include "sequenceList.h"
@@ -347,7 +348,7 @@ int SequentialListIsEmpty(DSList list)
 
 /**
  * @brief   销毁顺序表
- *          1）判断顺序表是否存在
+ *          1）判断顺序表数据域是否为空
  *          2）存在，释放内存
  *          3）长度置为0
  * 
@@ -356,7 +357,7 @@ int SequentialListIsEmpty(DSList list)
  */
 int SequentialListDestroy(DSList *list)
 {
-    if(list)
+    if(list->data)
     {
         free(list->data);   // 2）销毁顺序表
         list->length = 0;   // 3）长度置为0
