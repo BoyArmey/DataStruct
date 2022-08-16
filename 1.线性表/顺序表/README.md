@@ -1,6 +1,7 @@
 # 静态顺序表与到那个太顺序表的区别
 
-两者仅在定义数据结构与初始化时存在较大差别，其他操作差别并不大。
+1）两者仅在定义数据结构与初始化时存在较大差别，其他操作基本相同。
+2）动态顺序表需要进行销毁，即手动释放申请的内存。
 
 ## 定义与初始化区别
 
@@ -37,6 +38,18 @@ int SequentialListInit(DSList *list)
         return TRUE;        // 初始化成功
     }
     return FALSE;       // 初始化失败
+}
+
+// 销毁动态顺序表
+int SequentialListDestroy(DSList *list)
+{
+    if(list->data)
+    {
+        free(list->data);   // 2）销毁顺序表
+        list->length = 0;   // 3）长度置为0
+        return TRUE;        // 销毁成功
+    }
+    return FALSE;           // 销毁失败
 }
 
 ```
