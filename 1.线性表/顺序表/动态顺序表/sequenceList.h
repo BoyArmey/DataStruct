@@ -28,7 +28,7 @@ int SequentialListInit(DSList *list);
 // 添加结点
 int SequentialListAdd(DSList *list,ElemType element);
 // 显示所有的结点
-void SequentialListShow(DSList list);
+int SequentialListShow(DSList list);
 // 插入结点
 int SequentialListInsert(DSList *list,int index,ElemType element);
 // 删除结点

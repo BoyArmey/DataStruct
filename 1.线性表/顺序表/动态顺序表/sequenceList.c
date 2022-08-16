@@ -62,8 +62,44 @@ int SequentialListAdd(DSList *list,ElemType element)
 
 }
 
-// 显示所有的结点
-void SequentialListShow(DSList list)
+/**
+ * @brief   显示所有的结点
+ *          1）判断顺序表是否为空表
+ *          2）输出顺序表结点信息 
+ * 
+ * @param list
+ * @return int 
+ */
+int SequentialListShow(DSList list)
+{
+    int i;  // 循环变量
+
+    // 1）判断顺序表是否为空表
+    if(list.length == 0)
+    {
+        printf("\n顺序表为空!\n");
+        return FALSE;   
+    }
+
+    // 2）输出顺序表结点信息 
+    for (i = 0; i < list.length; i++)
+    {
+        PrintNodeInfo(*(list.data + i));        // 打印每个结点的数据
+    }
+    printf("当前顺序表长度为：%d\n",list.length);
+    
+    return TRUE;
+}
+
+/**
+ * @brief   插入结点
+ * 
+ * @param list 
+ * @param index     下标
+ * @param element   结点数据
+ * @return int 
+ */
+int SequentialListInsert(DSList *list,int index,ElemType element)
 {
     
 }

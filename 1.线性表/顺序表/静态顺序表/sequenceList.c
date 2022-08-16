@@ -44,24 +44,37 @@ int SequentialListAdd(SSList *list,ElemType element)
     
     // 3）顺序表长度加1
     list->length += 1;
-    
+
     return TRUE;   //添加成功
 }
 
 /**
- * @brief 输出所有结点的信息
+ * @brief   输出所有结点的信息
+ *          1）判断顺序表是否为空表
+ *          2）输出顺序表结点信息
  * 
  * @param list 
- * @return void 
+ * @return int 
  */
-void SequentialListShow(SSList list)
+int SequentialListShow(SSList list)
 {
     int i;  // 循环变量
+
+    // 1）判断顺序表是否为空表
+    if(list.length == 0)
+    {
+        printf("\n顺序表为空!\n");
+        return FALSE;   
+    }
+
+    // 2）输出顺序表结点信息 
     for (i = 0; i < list.length; i++)
     {
         PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
     }
     printf("当前顺序表长度为：%d\n",list.length);
+    
+    return TRUE;
 }
 
 
