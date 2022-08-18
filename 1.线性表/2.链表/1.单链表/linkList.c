@@ -14,6 +14,6 @@
  */
 int LinkListInit(linkList list)
 {
-    list->next = NULL;      // 指针域置空
+    list->next = NULL;      // 1）指针域设置为NULL
     return TRUE;
 }
