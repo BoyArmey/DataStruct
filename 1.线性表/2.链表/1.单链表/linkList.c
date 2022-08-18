@@ -5,7 +5,13 @@
 #include "status.h"
 #include "linkList.h"
 
-// 初始化链表
+/**
+ * @brief   初始化链表
+ *          1）指针域设置为NULL
+ * 
+ * @param list 
+ * @return int 
+ */
 int LinkListInit(linkList list)
 {
     list->next = NULL;      // 指针域置空
