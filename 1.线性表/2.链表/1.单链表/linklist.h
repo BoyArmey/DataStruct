@@ -10,12 +10,16 @@ typedef struct
 }ElemType;
 
 
-// 定义链表数据结构
-struct linklist
+// 定义链表结点类型
+struct Node
 {
     ElemType elem;               // 数据域
-    struct linklist *next;      //  结点域
+    struct Node *next;      //  结点域
 };
+
+// 定义链表
+typedef struct Node *linklist;  
+
 
 
 #endif
