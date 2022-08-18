@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "utils.h"
-#include "sequenceList.h"
+#include "linkList.h"
 
 
 /**
@@ -53,7 +53,7 @@ void PrintNodeInfo(ElemType elemtype)
  * @brief   结点数据拷贝
  *          将第二个参数的数据保存到第一个参数中
  * @param elemtype1     结点1
- * @param elemtype2     检点2
+ * @param elemtype2     结点2
  */
 void SwapNodeInfo(ElemType *elemtype1,ElemType *elemtype2)
 {

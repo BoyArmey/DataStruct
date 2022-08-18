@@ -1,7 +1,7 @@
 #ifndef _UTILS_H
 #define _UTILS_H
 
-#include "sequenceList.h"
+#include "linkList.h"
 
 
 // 解决控制台中程序执行时显示中文乱码的问题

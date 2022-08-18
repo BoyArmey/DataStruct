@@ -20,6 +20,9 @@ struct Node
 // 定义链表
 typedef struct Node *linkList;  
 
+// 初始化链表
+int LinkListInit(linkList list);
+
 
 
 #endif
