@@ -35,4 +35,5 @@ int LinkListAdd(linkList list,ElemType elem)
     // 1）申请结点，将传入的数据保存到结点
     Node node;
     NodeInfoCopy(&(node.elem),&(elem));
+    
 }
