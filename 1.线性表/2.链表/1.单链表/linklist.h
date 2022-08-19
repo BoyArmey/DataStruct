@@ -11,14 +11,17 @@ typedef struct
 
 
 // 定义链表结点类型
-struct Node
+struct NODE
 {
     ElemType elem;           // 数据域
-    struct Node *next;      //  结点域
-}node;     // 结点数据类型
+    struct NODE *next;      //  结点域
+};     
 
+// 定义链表结点
+typedef struct NODE Node; 
 // 定义链表
-typedef struct Node *linkList;  
+typedef struct NODE *linkList;  
+
 
 // 链表初始化
 int LinkListInit(linkList list);

@@ -11,9 +11,9 @@ void windows_cmd_support_utf8();
 ElemType GetElement();
 
 // 输出结点的数据信息
-void PrintNodeInfo(ElemType elemtype);
+void NodeInfoPrint(ElemType elem);
 
 // 结点数据拷贝
-void SwapNodeInfo(ElemType *elemtype1,ElemType *elemtype2);
+void NodeInfoCopy(ElemType *elem1,ElemType *elem2);
 
 #endif

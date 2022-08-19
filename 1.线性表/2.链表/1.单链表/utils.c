@@ -41,23 +41,23 @@ ElemType GetElement()
 /**
  * @brief 打印结点的数据信息
  * 
- * @param elemtype     待打印的结点
+ * @param elem     待打印的结点
  */
-void PrintNodeInfo(ElemType elemtype)
+void NodeInfoPrint(ElemType elem)
 {
     //printf("ID\t姓名\t年龄\n");
-    printf("%-10s\t%-10s\t%-10d\n",elemtype.id,elemtype.name,elemtype.age);
+    printf("%-10s\t%-10s\t%-10d\n",elem.id,elem.name,elem.age);
 }
 
 /**
  * @brief   结点数据拷贝
  *          将第二个参数的数据保存到第一个参数中
- * @param elemtype1     结点1
- * @param elemtype2     结点2
+ * @param elem1     结点1
+ * @param elem2     结点2
  */
-void SwapNodeInfo(ElemType *elemtype1,ElemType *elemtype2)
+void NodeInfoCopy(ElemType *elem1,ElemType *elem2)
 {
-    strcpy(elemtype1->id,elemtype2->id);          // 保存id字段
-    strcpy(elemtype1->name,elemtype2->name);      // 保存姓名字段
-    elemtype1->age = elemtype2->age;               // 保存年龄字段
+    strcpy(elem1->id,elem2->id);          // 保存id字段
+    strcpy(elem1->name,elem2->name);      // 保存姓名字段
+    elem1->age = elem2->age;               // 保存年龄字段
 }

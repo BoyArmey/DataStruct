@@ -21,8 +21,8 @@ int LinkListInit(linkList list)
 
 /**
  * @brief   链表追加元素
- *          1）申请一个结点，将传入的数据保存到结点
- *          2）申请一个指针，指向链表的首元结点
+ *          1）申请结点，将传入的数据保存到结点
+ *          2）申请指针，将其指向链表的首元结点
  *          3）使用while循环，将指针移动到链表尾部
  *          4）将数据插入到链表尾部
  * 
@@ -32,5 +32,7 @@ int LinkListInit(linkList list)
  */
 int LinkListAdd(linkList list,ElemType elem)
 {
-
+    // 1）申请结点，将传入的数据保存到结点
+    Node node;
+    NodeInfoCopy(&(node.elem),&(elem));
 }
