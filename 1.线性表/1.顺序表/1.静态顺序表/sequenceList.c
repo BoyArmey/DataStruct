@@ -70,7 +70,7 @@ int SequentialListShow(SSList list)
     // 2）输出顺序表结点信息 
     for (i = 0; i < list.length; i++)
     {
-        PrintNodeInfo(list.data[i]);    // 打印每个结点的数据
+        NodeInfoPrint(list.data[i]);    // 打印每个结点的数据
     }
     printf("当前顺序表长度为：%d\n",list.length);
     
@@ -211,7 +211,7 @@ int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
 
     // 4）返回到的查找元素
     printf("\n下标为%d的结点为:\n",index + 1);      // 将程序角度的index转为用户角度的index
-    SwapNodeInfo(element,&(list.data[index]));
+    NodeInfoCopy(element,&(list.data[index]));
 
     return TRUE;    // 查找成功
 }
@@ -251,7 +251,7 @@ int SequentialListSearchById(SSList list, char* id, ElemType *element)
     }
 
     // 3）返回对应id结点
-    SwapNodeInfo(element,&(list.data[index]));
+    NodeInfoCopy(element,&(list.data[index]));
 
     return TRUE;
 }
@@ -271,7 +271,6 @@ int SequentialListInverse(SSList *list)
     int i;                          // 循环变量,用于交换元素时的遍历
     int begin = 0;                  // 指向顺序表的第一个元素
     int end = (list->length - 1);   // 指向顺序表最后一个元素
-    ElemType elem;                  // 交换时的中间变量
 
     // 1）判断是否为空表
     if(list->length == 0)
@@ -283,9 +282,7 @@ int SequentialListInverse(SSList *list)
     for(i = 0; i < (list->length / 2); i++)
     {
         // 交换结点
-        SwapNodeInfo(&elem,&(list->data[begin]));
-        SwapNodeInfo(&(list->data[begin]),&(list->data[end]));
-        SwapNodeInfo(&(list->data[end]),&elem);
+        NodeInfoSwap(&(list->data[begin]),&(list->data[end]));
         
         // 移动下标
         begin += 1;
