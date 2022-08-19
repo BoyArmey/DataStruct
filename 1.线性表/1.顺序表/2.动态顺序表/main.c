@@ -51,24 +51,24 @@ int main()
     // 查找首元素
     if(SequentialListSearchByIndex(list,1,&elem1))
     {
-        PrintNodeInfo(elem1);
+        NodeInfoPrint(elem1);
     }
     // 查找末尾元素
     if(SequentialListSearchByIndex(list,4,&elem1))
     {
-        PrintNodeInfo(elem1);
+        NodeInfoPrint(elem1);
     }
     // 查找中间元素
     if(SequentialListSearchByIndex(list,2,&elem1))
     {
-        PrintNodeInfo(elem1);
+        NodeInfoPrint(elem1);
     }
 
     printf("\n---------------------------按指定id查找数据----------------------------\n");
     // 查找id为"0003"的结点信息
     if(SequentialListSearchById(list,"0003",&elem1))
     {
-        PrintNodeInfo(elem1);
+        NodeInfoPrint(elem1);
     }
 
     // 顺序表元素逆序

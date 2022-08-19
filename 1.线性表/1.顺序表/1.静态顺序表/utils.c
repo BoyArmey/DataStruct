@@ -41,7 +41,7 @@ ElemType GetElement()
 /**
  * @brief 打印结点的数据信息
  * 
- * @param elem     待打印的结点     PrintNodeInfo
+ * @param elem
  */
 void NodeInfoPrint(ElemType elem)
 {
