@@ -16,4 +16,7 @@ void NodeInfoPrint(ElemType elem);
 // 结点数据拷贝
 void NodeInfoCopy(ElemType *elem1,ElemType *elem2);
 
+// 结点数据交换
+void NodeInfoSwap(ElemType *elem1,ElemType *elem2);
+
 #endif

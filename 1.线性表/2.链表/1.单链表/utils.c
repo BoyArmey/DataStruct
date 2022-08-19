@@ -61,3 +61,30 @@ void NodeInfoCopy(ElemType *elem1,ElemType *elem2)
     strcpy(elem1->name,elem2->name);      // 保存姓名字段
     elem1->age = elem2->age;               // 保存年龄字段
 }
+
+/**
+ * @brief       结点数据交换
+ *              交换两个结点的数据信息
+ * @param elem1 
+ * @param elem2 
+ * @return * void 
+ */
+void NodeInfoSwap(ElemType *elem1,ElemType *elem2)
+{   
+    ElemType elem;  // 用于交换的中间变量
+    
+    // 保存elem2的信息
+    strcpy(elem.id,elem2->id);
+    strcpy(elem.name,elem2->name);
+    elem.age = elem2->age;
+
+    // 将elem1的信息保存到elem2中
+    strcpy(elem2->id,elem1->id);
+    strcpy(elem2->name,elem1->name);
+    elem2->age = elem1->age;
+
+    // 将elem1的信息修改为elem2的信息
+    strcpy(elem1->id,elem.id);
+    strcpy(elem1->name,elem.name);
+    elem1->age = elem.age;
+}
