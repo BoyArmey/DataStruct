@@ -20,13 +20,17 @@ struct NODE
 // 定义链表结点
 typedef struct NODE Node; 
 // 定义链表
-typedef struct NODE *linkList;  
+typedef struct NODE linkList;  
 
 
 // 链表初始化
-int LinkListInit(linkList list);
+linkList* LinkListInit();
 // 链表追加元素
-int LinkListAdd(linkList list,ElemType elem);
+int LinkListAdd(linkList *list,ElemType elem);
+// 显示链表元素
+void LinkListShow(linkList list);
+// 链表的长度
+int LinkListLength(linkList list);
 
 
 
