@@ -21,7 +21,6 @@ int main()
 
     // 初始化链表
     linkList *list = LinkListInit();
-    printf("%p",list->next);
 
     // 追加元素
     LinkListAdd(list,datas[0]);
