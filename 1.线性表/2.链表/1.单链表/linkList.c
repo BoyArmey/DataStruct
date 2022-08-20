@@ -86,7 +86,7 @@ void LinkListShow(linkList list)
     while (p)
     {
         NodeInfoPrint(p->elem);      // 输出结点信息
-        p = p->next;              // 指向链表的下一个结点
+        p = p->next;                // 指向链表的下一个结点
     }   
 }
 
