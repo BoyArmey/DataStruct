@@ -27,10 +27,11 @@ typedef struct NODE linkList;
 linkList* LinkListInit();
 // 链表追加元素
 int LinkListAdd(linkList *list,ElemType elem);
-// 显示链表元素
-void LinkListShow(linkList list);
 // 链表的长度
 int LinkListLength(linkList list);
+// 显示链表元素
+void LinkListShow(linkList list);
+// 
 
 
 

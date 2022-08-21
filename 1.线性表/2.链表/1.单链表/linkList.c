@@ -119,3 +119,5 @@ void LinkListShow(linkList list)
     printf("\n当前链表长度为:%d\n",LinkListLength(list));
 }
 
+
+
