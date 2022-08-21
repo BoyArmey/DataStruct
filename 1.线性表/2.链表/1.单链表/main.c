@@ -24,14 +24,14 @@ int main()
 
     // 追加元素
     LinkListAdd(list,datas[0]);
-    //LinkListAdd(list,datas[1]);
-    //LinkListAdd(list,datas[2]);
-    //LinkListAdd(list,datas[3]);
+    LinkListAdd(list,datas[1]);
+    LinkListAdd(list,datas[2]);
+    LinkListAdd(list,datas[3]);
     // 输出链表信息
     printf("\n---------------------------添加数据----------------------------\n");
-    LinkListShow(*list);
-    printf("\n---------------------------链表长度----------------------------\n");
-    printf("%d\n",LinkListLength(*list));             
+    LinkListShow(*list);         
+
+
 
 
     return 0;

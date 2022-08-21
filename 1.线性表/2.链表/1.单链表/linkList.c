@@ -79,17 +79,6 @@ int LinkListAdd(linkList *list,ElemType elem)
     return TRUE;
 }
 
-// 显示链表元素
-void LinkListShow(linkList list)
-{
-    linkList *p = (&list)->next;
-    while (p)
-    {
-        NodeInfoPrint(p->elem);      // 输出结点信息
-        p = p->next;                // 指向链表的下一个结点
-    }   
-}
-
 // 链表的长度
 int LinkListLength(linkList list)
 {
@@ -102,3 +91,17 @@ int LinkListLength(linkList list)
     }
     return length;
 }
+
+
+// 显示链表元素
+void LinkListShow(linkList list)
+{
+    linkList *p = (&list)->next;
+    while (p)
+    {
+        NodeInfoPrint(p->elem);      // 输出结点信息
+        p = p->next;                // 指向链表的下一个结点
+    }
+    printf("\n当前链表长度为:%d\n",LinkListLength(list));
+}
+
