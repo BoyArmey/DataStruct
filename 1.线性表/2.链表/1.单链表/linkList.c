@@ -119,9 +119,20 @@ void LinkListShow(linkList list)
     printf("\n当前链表长度为:%d\n",LinkListLength(list));
 }
 
-// 链表插入元素
+/**
+ * @brief   链表插入元素
+ *          1）将插入下标进行角色转换
+ *              程序角度从0开始，用户角度从1开始
+ * 
+ * @param list 
+ * @param elem      插入元素
+ * @param index     插入位置
+ * @return status 
+ */
 status LinkListInsert(linkList *list, ElemType elem, int index)
 {
+    // 1）下标角度转换
+    index = index - 1;
 
 }
 
