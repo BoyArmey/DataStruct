@@ -37,9 +37,9 @@ linkList* LinkListInit()
  * 
  * @param list 
  * @param elem 
- * @return int 
+ * @return status 
  */
-int LinkListAdd(linkList *list,ElemType elem)
+status LinkListAdd(linkList *list,ElemType elem)
 {
 
     // 1）申请指针，指向链表的头结点
@@ -119,5 +119,9 @@ void LinkListShow(linkList list)
     printf("\n当前链表长度为:%d\n",LinkListLength(list));
 }
 
+// 链表插入元素
+status LinkListInsert(linkList *list, ElemType elem, int index)
+{
 
+}
 

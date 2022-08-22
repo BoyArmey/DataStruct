@@ -12,9 +12,9 @@
  *          即使有数据也可以被新加入的数据覆盖掉.
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListInit(SSList *list)
+status SequentialListInit(SSList *list)
 {
     list->length = 0;
     return TRUE; 
@@ -29,9 +29,9 @@ int SequentialListInit(SSList *list)
  * 
  * @param list 
  * @param element 
- * @return int 
+ * @return status 
  */
-int SequentialListAdd(SSList *list,ElemType element)
+status SequentialListAdd(SSList *list,ElemType element)
 {
     if(list->length >= MAXSIZE)
     {
@@ -54,9 +54,9 @@ int SequentialListAdd(SSList *list,ElemType element)
  *          2）输出顺序表结点信息
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListShow(SSList list)
+status SequentialListShow(SSList list)
 {
     int i;  // 循环变量
 
@@ -91,9 +91,9 @@ int SequentialListShow(SSList list)
  * @param list 
  * @param index     下标 
  * @param element   数据
- * @return int 
+ * @return status 
  */
-int SequentialListInsert(SSList *list,int index,ElemType element)
+status SequentialListInsert(SSList *list,int index,ElemType element)
 {
     int i;      // 循环变量，用于移动元素时记录下标
 
@@ -141,9 +141,9 @@ int SequentialListInsert(SSList *list,int index,ElemType element)
  * 
  * @param list 
  * @param index     下标
- * @return int 
+ * @return status 
  */
-int SequentialListDelete(SSList *list,int index)
+status SequentialListDelete(SSList *list,int index)
 {
     int i;  // 循环变量，用于移动元素时记录下标
 
@@ -187,9 +187,9 @@ int SequentialListDelete(SSList *list,int index)
  * @param list 
  * @param index     下标
  * @param element   查找到的元素
- * @return int 
+ * @return status 
  */
-int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
+status SequentialListSearchByIndex(SSList list,int index,ElemType *element)
 {
     int i;      // 循环变量
     // 1）将用户角度的下标转为程序角度的下标
@@ -225,9 +225,9 @@ int SequentialListSearchByIndex(SSList list,int index,ElemType *element)
  * @param list 
  * @param id        查找id 
  * @param element   查找到的结点
- * @return int 
+ * @return status 
  */
-int SequentialListSearchById(SSList list, char* id, ElemType *element)
+status SequentialListSearchById(SSList list, char* id, ElemType *element)
 {
     int i;          // 循环变量，用于遍历顺序表
     int index;      // 记录查找到的对应元素的下标
@@ -264,9 +264,9 @@ int SequentialListSearchById(SSList list, char* id, ElemType *element)
  *          3) 每一轮交换完毕后，指向顺序表首元素的下标加1；指向顺序表最后元素的下标减1
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListInverse(SSList *list)
+status SequentialListInverse(SSList *list)
 {
     int i;                          // 循环变量,用于交换元素时的遍历
     int begin = 0;                  // 指向顺序表的第一个元素
@@ -306,9 +306,9 @@ int GetSequentialListLength(SSList list)
  * @brief   清空顺序表
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListClear(SSList *list)
+status SequentialListClear(SSList *list)
 {
     list->length = 0;
 }
@@ -319,7 +319,7 @@ int SequentialListClear(SSList *list)
  * @param list 
  * @return int 
  */
-int SequentialListIsEmpty(SSList list)
+status SequentialListIsEmpty(SSList list)
 {
     if(list.length == 0)
     {
