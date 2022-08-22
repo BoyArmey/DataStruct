@@ -13,9 +13,9 @@
  *	        3）分配成功，将顺序表长度置为0
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListInit(DSList *list)
+status SequentialListInit(DSList *list)
 {
     /* 手动输入申请内存【如果手动输入顺序表最大容量，后面判断线性表是否已满需要修改相对于的判断条件】
     int maxSize;
@@ -42,9 +42,9 @@ int SequentialListInit(DSList *list)
  * 
  * @param list      
  * @param element   结点数据
- * @return int 
+ * @return status 
  */
-int SequentialListAdd(DSList *list,ElemType element)
+status SequentialListAdd(DSList *list,ElemType element)
 {
     // 1）判断顺序表是否已满
     if(list->length == MAXSIZE)
@@ -69,9 +69,9 @@ int SequentialListAdd(DSList *list,ElemType element)
  *          2）输出顺序表结点信息 
  * 
  * @param list
- * @return int 
+ * @return status 
  */
-int SequentialListShow(DSList list)
+status SequentialListShow(DSList list)
 {
     int i;  // 循环变量
 
@@ -105,9 +105,9 @@ int SequentialListShow(DSList list)
  * @param list 
  * @param index     下标
  * @param element   结点数据
- * @return int 
+ * @return status 
  */
-int SequentialListInsert(DSList *list,int index,ElemType element)
+status SequentialListInsert(DSList *list,int index,ElemType element)
 {
     int i;      // 循环变量，用于移动元素时记录下标
 
@@ -155,9 +155,9 @@ int SequentialListInsert(DSList *list,int index,ElemType element)
  * 
  * @param list 
  * @param index     下标
- * @return int 
+ * @return status 
  */
-int SequentialListDelete(DSList *list,int index)
+status SequentialListDelete(DSList *list,int index)
 {
     int i;  // 循环变量，用于移动元素时记录下标
 
@@ -202,9 +202,9 @@ int SequentialListDelete(DSList *list,int index)
  * @param list 
  * @param index     下标
  * @param element   查找到的元素
- * @return int 
+ * @return status 
  */
-int SequentialListSearchByIndex(DSList list,int index,ElemType *element)
+status SequentialListSearchByIndex(DSList list,int index,ElemType *element)
 {
     int i;      // 循环变量
     // 1）将用户角度的下标转为程序角度的下标
@@ -240,9 +240,9 @@ int SequentialListSearchByIndex(DSList list,int index,ElemType *element)
  * @param list 
  * @param id        查找id 
  * @param element   查找到的结点
- * @return int 
+ * @return status 
  */
-int SequentialListSearchById(DSList list, char* id, ElemType *element)
+status SequentialListSearchById(DSList list, char* id, ElemType *element)
 {
     int i;          // 循环变量，用于遍历顺序表
     int index;      // 记录查找到的对应元素的下标
@@ -279,9 +279,9 @@ int SequentialListSearchById(DSList list, char* id, ElemType *element)
  *          3) 每一轮交换完毕后，指向顺序表首元素的下标加1；指向顺序表最后元素的下标减1
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListInverse(DSList *list)
+status SequentialListInverse(DSList *list)
 {
     int i;                          // 循环变量,用于交换元素时的遍历
     int begin = 0;                  // 指向顺序表的第一个元素
@@ -321,9 +321,9 @@ int GetSequentialListLength(DSList list)
  * @brief   清空顺序表
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListClear(DSList *list)
+status SequentialListClear(DSList *list)
 {
     list->length = 0;
 }
@@ -332,9 +332,9 @@ int SequentialListClear(DSList *list)
  * @brief   判断顺序表是否为空表
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListIsEmpty(DSList list)
+status SequentialListIsEmpty(DSList list)
 {
     if(list.length == 0)
     {
@@ -350,9 +350,9 @@ int SequentialListIsEmpty(DSList list)
  *          3）长度置为0
  * 
  * @param list 
- * @return int 
+ * @return status 
  */
-int SequentialListDestroy(DSList *list)
+status SequentialListDestroy(DSList *list)
 {
     if(list->data)
     {
