@@ -27,12 +27,14 @@ typedef struct NODE linkList;
 
 // 链表初始化
 linkList* LinkListInit();
-// 链表追加元素
-status LinkListAdd(linkList *list, ElemType elem);
+// 链表尾部追加元素
+status LinkListAddEnd(linkList *list, ElemType elem);
 // 链表的长度
 int LinkListLength(linkList list);
 // 显示链表元素
 void LinkListShow(linkList list);
+// 链表头部追加元素
+status LinkListAddFirst(linkList *list, ElemType elem);
 // 链表插入元素
 status LinkListInsert(linkList *list, ElemType elem, int index);
 

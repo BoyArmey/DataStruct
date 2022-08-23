@@ -23,10 +23,14 @@ int main()
     linkList *list = LinkListInit();
 
     // 追加元素
-    LinkListAdd(list,datas[0]);
-    LinkListAdd(list,datas[1]);
-    LinkListAdd(list,datas[2]);
-    LinkListAdd(list,datas[3]);
+    LinkListAddEnd(list,datas[0]);
+    LinkListAddEnd(list,datas[1]);
+    LinkListAddEnd(list,datas[2]);
+    LinkListAddEnd(list,datas[3]);
+    LinkListAddFirst(list,datas[0]);
+    LinkListAddFirst(list,datas[1]);
+    LinkListAddFirst(list,datas[2]);
+    LinkListAddFirst(list,datas[3]);
     // 输出链表信息
     printf("\n---------------------------添加数据----------------------------\n");
     LinkListShow(*list);         
