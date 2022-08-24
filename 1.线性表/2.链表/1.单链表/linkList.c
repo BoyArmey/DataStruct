@@ -155,10 +155,13 @@ status LinkListAddFirst(linkList *list, ElemType elem)
 /**
  * @brief   链表插入元素
  *          1）新建指针p，指向链表的首元结点
- *          ）获取链表长度，并判断插入位置是否合法
- *          ）创建结点，保存传入的
- *          ）将插入下标进行角色转换
+ *          2）将插入下标进行角色转换
  *              程序角度从0开始，用户角度从1开始
+ *          3）获取链表长度，并判断插入位置是否合法
+ *          4）创建结点，保存传入的
+ *          5）查找插入位置，将指针p指向插入位置的前一个元素
+ *          6）插入数据
+ *          
  *          
  * 
  * @param list 
@@ -168,13 +171,36 @@ status LinkListAddFirst(linkList *list, ElemType elem)
  */
 status LinkListInsert(linkList *list, ElemType elem, int index)
 {
+    int length = LinkListLength(*list);     // 获取链表长度
+    Node *node = (Node*)malloc(sizeof(Node));   // 创建结点
+    int i;      // 魂环变量
+
     // 1）指向首元结点
     linkList *p = list->next;
-
+    
     // 2）下标转换
     index = index - 1;
 
+    // 3）判断插入位置是否合法
+    if(index < 0 || index > length)
+    {
+        printf("\n插入位置不合法，插入失败\n");
+        return FALSE;
+    }
 
+    // 4）保存待插入的结点
+    NodeInfoCopy(&(node->elem),&elem);
 
+    // 5）查找插入位置，将指针p指向插入位置的前一个元素
+    for (i = 0; i < index; i++)
+    {
+        p = p->next;
+    }
+
+    // 6）插入元素
+    node->next = p->next;
+    p->next = node;
+    
+    return TRUE;
 }
 

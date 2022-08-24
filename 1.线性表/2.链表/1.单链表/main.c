@@ -35,7 +35,11 @@ int main()
     printf("\n---------------------------添加数据----------------------------\n");
     LinkListShow(*list);         
 
-
+    // 插入数据
+    LinkListInsert(list,datas[4],2);
+    // 输出链表信息
+    printf("\n---------------------------插入数据----------------------------\n");
+    LinkListShow(*list);  
 
 
     return 0;
