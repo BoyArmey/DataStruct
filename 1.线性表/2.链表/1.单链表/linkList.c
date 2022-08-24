@@ -154,7 +154,7 @@ status LinkListAddFirst(linkList *list, ElemType elem)
 
 /**
  * @brief   链表插入元素
- *          1）新建指针p，指向链表的首元结点
+ *          1）新建指针p，指向链表的头结点
  *          2）将插入下标进行角色转换
  *              程序角度从0开始，用户角度从1开始
  *          3）获取链表长度，并判断插入位置是否合法
@@ -176,7 +176,7 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     int i;      // 魂环变量
 
     // 1）指向首元结点
-    linkList *p = list->next;
+    linkList *p = list;
     
     // 2）下标转换
     index = index - 1;
@@ -200,7 +200,6 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     // 6）插入元素
     node->next = p->next;
     p->next = node;
-    
     return TRUE;
 }
 

@@ -33,10 +33,12 @@ int main()
     LinkListAddFirst(list,datas[3]);
     // 输出链表信息
     printf("\n---------------------------添加数据----------------------------\n");
-    LinkListShow(*list);         
+    LinkListShow(*list);        
 
     // 插入数据
-    LinkListInsert(list,datas[4],2);
+    LinkListInsert(list,datas[4],1);        // 头部插入
+    LinkListInsert(list,datas[5],3);        // 尾部插入
+    LinkListInsert(list,datas[6],11);        // 中间插入
     // 输出链表信息
     printf("\n---------------------------插入数据----------------------------\n");
     LinkListShow(*list);  
