@@ -27,12 +27,17 @@ int main()
     LinkListAddEnd(list,datas[1]);
     LinkListAddEnd(list,datas[2]);
     LinkListAddEnd(list,datas[3]);
+    // 输出链表信息
+    printf("\n---------------------------尾部添加数据----------------------------\n");
+    LinkListShow(*list); 
+
+
     LinkListAddFirst(list,datas[0]);
     LinkListAddFirst(list,datas[1]);
     LinkListAddFirst(list,datas[2]);
     LinkListAddFirst(list,datas[3]);
     // 输出链表信息
-    printf("\n---------------------------添加数据----------------------------\n");
+    printf("\n---------------------------头部添加数据----------------------------\n");
     LinkListShow(*list);        
 
     // 插入数据

@@ -44,7 +44,7 @@ status LinkListAddEnd(linkList *list,ElemType elem)
 {
 
     // 1）申请指针，指向链表的头结点
-    linkList *p = list->next;     
+    linkList *p = list;     
 
     // 2）创建保存数据的结点，内存申请失败则退出
     Node *node = (Node*)malloc(sizeof(Node));
@@ -59,7 +59,7 @@ status LinkListAddEnd(linkList *list,ElemType elem)
     node->next = NULL;
 
     // 4）为空链表，将新创建的结点加入到头结点的位置
-    if(list->next == NULL)      
+    /* if(list->next == NULL)      
     {
         
         list->next = node;
@@ -75,7 +75,16 @@ status LinkListAddEnd(linkList *list,ElemType elem)
 
         // 6）添加结点
         p->next = node;        
-    }  
+    } */
+
+    // 5）非空链表，使用指针p移动到链表尾部，便于添加数据
+        while (p->next != NULL)
+        {
+            p = p->next;
+        }
+
+        // 6）添加结点
+        p->next = node;  
 
     return TRUE;
 }
