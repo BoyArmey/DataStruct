@@ -28,12 +28,11 @@ linkList* LinkListInit()
 
 /**
  * @brief   链表尾部追加元素
- *          1）申请指针，将其指向链表的头结点
+ *          1）申请指针，将其指向链表的首元结点
  *          2）创建保存数据的结点，内存申请失败则退出
- *          3）创建成功则将传入的数据保存到新创建的结点
- *          4）判断是否为空链表，为空链表，则将新创建的结点加入到头结点的位置
- *              因为p指向了NULL
- *          5）非空链表则使用循环，将指针定位到链表尾部
+ *              创建新结点后，新结点指针域置空
+ *          3）内存申请成功则将传入的数据保存到新创建的结点
+ *          4）使用循环，将指针p定位到链表尾部
  *          6）将数据添加到链表尾部
  * 
  * @param list 
@@ -48,6 +47,7 @@ status LinkListAddEnd(linkList *list,ElemType elem)
 
     // 2）创建保存数据的结点，内存申请失败则退出
     Node *node = (Node*)malloc(sizeof(Node));
+    node->next = NULL;
     if(!node)
     {
         printf("\n内存申请失败!\n");
@@ -56,35 +56,16 @@ status LinkListAddEnd(linkList *list,ElemType elem)
 
     // 3）申请成功将传入的数据保存到新创建的结点
     NodeInfoCopy(&(node->elem),&(elem));
-    node->next = NULL;
+    
 
-    // 4）为空链表，将新创建的结点加入到头结点的位置
-    /* if(list->next == NULL)      
+    // 4）使用循环，将指针p定位到链表尾部，用于添加数据
+    while (p->next != NULL)
     {
-        
-        list->next = node;
-        return TRUE;
+        p = p->next;
     }
-    else
-    {
-        // 5）非空链表，使用指针p移动到链表尾部，便于添加数据
-        while (p->next != NULL)
-        {
-            p = p->next;
-        }
 
-        // 6）添加结点
-        p->next = node;        
-    } */
-
-    // 5）非空链表，使用指针p移动到链表尾部，便于添加数据
-        while (p->next != NULL)
-        {
-            p = p->next;
-        }
-
-        // 6）添加结点
-        p->next = node;  
+    // 5）添加结点
+    p->next = node;  
 
     return TRUE;
 }
