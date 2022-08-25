@@ -125,13 +125,14 @@ status LinkListAddFirst(linkList *list, ElemType elem)
 {
     // 1）创建保存数据的结点，内存申请失败则退出
     Node *node = (Node*)malloc(sizeof(Node));
+    node->next = NULL;          // 指针域置空
     if(!node)
     {
         printf("\n内存申请失败!\n");
         return FALSE;
     }
     NodeInfoCopy(&(node->elem),&elem);   // 结点数据进行保存
-    node->next = NULL;          // 指针域置空
+    
 
     // 2）将首元结点的指针域保存到新结点的指针域
     node->next = list->next;
