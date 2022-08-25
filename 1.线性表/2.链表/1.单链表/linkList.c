@@ -192,6 +192,7 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     // 6）插入元素
     node->next = p->next;
     p->next = node;
+    
     return TRUE;
 }
 
