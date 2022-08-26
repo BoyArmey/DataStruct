@@ -37,7 +37,7 @@ void LinkListShow(linkList list);
 status LinkListAddFirst(linkList *list, ElemType elem);
 // 链表插入元素
 status LinkListInsert(linkList *list, ElemType elem, int index);
-// 链表查找数据
+// 通过下标查找链表数据
 status LinkListSearchByIndex(linkList list,int index,ElemType *elem);
 
 

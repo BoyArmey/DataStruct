@@ -197,16 +197,31 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
 }
 
 
-// 链表查找数据
+/**
+ * @brief   通过下标查找链表数据
+ *          1）获取链表长度
+ *              如果链表长度小于等于0，空链表返回FALSE
+ *          2）判断下标位置是否合法
+ * 
+ * 
+ * @param list 
+ * @param index     下标
+ * @param elem      查找到的元素
+ * @return status 
+ */
 status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 {
-    // 获取链表长度
+    // 1）获取链表长度
     int length = LinkListLength(list);
+    
     if (length <= 0)
     {
         printf("\n链表为空，查找失败\n");
         return FALSE;
     }
+
+    // 判断查找下标是否合法
+    
     
 }
 
