@@ -199,9 +199,11 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
 
 /**
  * @brief   通过下标查找链表数据
- *          1）获取链表长度
+ *          1）将用户角度的下标转化为程序角度的下标
+ *              用户从1开始，程序从0开始，所以需要减1
+ *          2）获取链表长度
  *              如果链表长度小于等于0，空链表返回FALSE
- *          2）判断下标位置是否合法
+ *          3）判断下标位置是否合法
  * 
  * 
  * @param list 
@@ -211,7 +213,10 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
  */
 status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 {
-    // 1）获取链表长度
+    // 1）下标角度转换
+    index = index - 1;
+
+    // 2）获取链表长度
     int length = LinkListLength(list);
     
     if (length <= 0)
@@ -220,8 +225,12 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
         return FALSE;
     }
 
-    // 判断查找下标是否合法
-    
+    // 3）判断查找下标是否合法
+    if(index < 0 || index > length)
+    {
+        printf("\n查找位置有误，查找失败\n");
+        return FALSE;
+    }
     
 }
 
