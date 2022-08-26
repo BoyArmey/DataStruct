@@ -197,5 +197,18 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
 }
 
 
+// 链表查找数据
+status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
+{
+    // 获取链表长度
+    int length = LinkListLength(list);
+    if (length <= 0)
+    {
+        printf("\n链表为空，查找失败\n");
+        return FALSE;
+    }
+    
+}
+
 
 
