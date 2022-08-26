@@ -196,3 +196,6 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     return TRUE;
 }
 
+
+
+

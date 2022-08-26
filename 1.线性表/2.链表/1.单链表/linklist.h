@@ -37,6 +37,7 @@ void LinkListShow(linkList list);
 status LinkListAddFirst(linkList *list, ElemType elem);
 // 链表插入元素
 status LinkListInsert(linkList *list, ElemType elem, int index);
+// 链表
 
 
 
