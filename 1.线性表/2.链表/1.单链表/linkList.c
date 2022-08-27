@@ -36,6 +36,7 @@ linkList* LinkListInit()
  *          4）使用循环，将指针p定位到链表尾部
  *              while (p->next != NULL)
  *          5）将数据添加到链表尾部
+ *          6）释放指针p
  * 
  * @param list 
  * @param elem 
@@ -69,6 +70,8 @@ status LinkListAddEnd(linkList *list,ElemType elem)
     // 5）添加结点
     p->next = node;  
 
+    // 6）释放指针p
+    free(p);
     return TRUE;
 }
 
@@ -88,9 +91,12 @@ int LinkListLength(linkList list)
     linkList *p = list.next;    // 1）指向头结点
     while (p)
     {
-        length += 1;               // 长度加1
-        p = p->next;              // 指向链表的下一个结点
+        length += 1;               // 2）长度加1
+        p = p->next;              // 3）指向链表的下一个结点
     }
+
+    // 4）释放指针p
+    free(p);
     return length;
 }
 
@@ -100,6 +106,7 @@ int LinkListLength(linkList list)
  *          1）新建指针p，指向链表的头结点
  *          2）使用p进行链表的遍历，输出每个结点的信息
  *          3）每一次遍历完成后，要将p指向下一个结点
+ *          4）释放指针p
  * 
  * @param list 
  */
@@ -109,9 +116,12 @@ void LinkListShow(linkList list)
     while (p)
     {
         NodeInfoPrint(p->elem);      // 2）输出结点信息
-        p = p->next;                // 指向链表的下一个结点
+        p = p->next;                // 3）指向链表的下一个结点
     }
     printf("\n当前链表长度为:%d\n",LinkListLength(list));
+    
+    // 4）释放指针p
+    free(p);
 }
 
 /**
@@ -156,7 +166,7 @@ status LinkListAddFirst(linkList *list, ElemType elem)
  *          4）创建结点，保存传入的数据
  *          5）查找插入位置，将指针p指向插入位置的前一个元素
  *          6）插入数据
- *          
+ *          7）释放指针p
  *          
  * 
  * @param list 
@@ -196,6 +206,8 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     node->next = p->next;
     p->next = node;
     
+    // 7）释放指针p
+    free(p);
     return TRUE;
 }
 
@@ -210,6 +222,7 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
  *          4）新建指针p指向头结点，使用循环将p指向查找的结点
  *              首元结点无数据信息，直接指向头结点即可
  *          5）保存查找到的数据
+ *          6）释放指针p
  * 
  * 
  * @param list 
@@ -250,6 +263,8 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
     // 5）保存查找到的结点信息
     NodeInfoCopy(elem,&(p->elem));
 
+    // 6）释放指针p
+    free(p);
     return TRUE;
 }
 
@@ -257,8 +272,10 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 /**
  * @brief   依据用户ID查找链表数据
  *          1）新建指针p指向链表头结点
- *          2）遍历链表，对比用户ID是否相同
+ *          2）设置标志位，检测是否查找到数据
+ *          3）遍历链表，对比用户ID是否相同
  *              相同则保存结点信息，不同继续遍历
+ *          4）释放指针p
  * 
  * @param list 
  * @param id 
@@ -274,7 +291,7 @@ status LinkListSearchById(linkList list,char *id,ElemType *elem)
 
 
     // 2）遍历链表，对比用户ID是否相同
-    while (p->next != NULL)         // 有问题
+    while (p != NULL)         // 有问题
     {
         if(strcmp(id,p->elem.id) == 0)
         {
@@ -293,8 +310,8 @@ status LinkListSearchById(linkList list,char *id,ElemType *elem)
         return FALSE;   // 为查找到对应的数据
     }
 
+    free(p);        // 释放指针p
     return TRUE;
-    
 }
 
 

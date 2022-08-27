@@ -79,7 +79,7 @@ int main()
     }
 
     printf("\n---------------------------依据ID查找数据----------------------------\n");
-    if(LinkListSearchById(*list,"0006",elem))
+    if(LinkListSearchById(*list,"0001",elem))
     {
         NodeInfoPrint(*elem);
     }
@@ -87,7 +87,15 @@ int main()
     {
         printf("\n未查找到相关结点信息\n");
     }
-    if(LinkListSearchById(*list,"0009",elem))
+    if(LinkListSearchById(*list,"0007",elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    if(LinkListSearchById(*list,"0009",elem))       // 不存在的结点
     {
         NodeInfoPrint(*elem);
     }
