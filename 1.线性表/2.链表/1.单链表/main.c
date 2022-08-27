@@ -54,12 +54,33 @@ int main()
 
 
     printf("\n---------------------------查找数据----------------------------\n");
-    LinkListSearchByIndex(*list,2,elem);
-    NodeInfoPrint(*elem);
-    LinkListSearchByIndex(*list,1,elem);
-    NodeInfoPrint(*elem);
-    LinkListSearchByIndex(*list,11,elem);
-    NodeInfoPrint(*elem);
+    // 查找中间结点
+    if(LinkListSearchByIndex(*list,2,elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    // 查找第一个结点
+    if(LinkListSearchByIndex(*list,1,elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    // 查找最后一个结点
+    if(LinkListSearchByIndex(*list,11,elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
 
 
     return 0;
