@@ -206,6 +206,7 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
  *          2）获取链表长度
  *              如果链表长度小于等于0，空链表返回FALSE
  *          3）判断下标位置是否合法
+ *          4）新建指针p指向首元结点，使用循环将p指向查找的结点
  * 
  * 
  * @param list 
@@ -215,6 +216,9 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
  */
 status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 {
+    int i;  // 循环变量
+    linkList *p = &list;
+
     // 1）下标角度转换
     index = index - 1;
 
@@ -234,6 +238,16 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
         return FALSE;
     }
     
+    // 4）将p指向查找的结点
+    for (int i = 0; i <= index; i++)
+    {
+        p = p->next;
+    }
+
+    // 5）保存查找到的结点信息
+    NodeInfoCopy(elem,&(p->elem));
+
+    return TRUE;
 }
 
 

@@ -21,6 +21,9 @@ int main()
 
     // 初始化链表
     linkList *list = LinkListInit();
+    
+    // 保存查找到的结点信息
+    ElemType elem;
 
     // 追加元素
     LinkListAddEnd(list,datas[0]);
@@ -47,6 +50,11 @@ int main()
     // 输出链表信息
     printf("\n---------------------------插入数据----------------------------\n");
     LinkListShow(*list);  
+
+
+    printf("\n---------------------------查找数据----------------------------\n");
+    LinkListSearchByIndex(*list,2,&elem);
+    NodeInfoPrint(elem);
 
 
     return 0;
