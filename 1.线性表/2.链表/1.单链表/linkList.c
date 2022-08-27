@@ -258,6 +258,7 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
  * @brief   依据用户ID查找链表数据
  *          1）新建指针p指向链表头结点
  *          2）遍历链表，对比用户ID是否相同
+ *              相同则保存结点信息，不同继续遍历
  * 
  * @param list 
  * @param id 
@@ -266,15 +267,19 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
  */
 status LinkListSearchById(linkList list,char *id,ElemType *elem)
 {
+    int flag = 0;   // 标记位，记录是否查找到数据
+    
     // 1）将p指向链表头结点
     linkList *p = list.next;
 
+
     // 2）遍历链表，对比用户ID是否相同
-    while (p->next != NULL)
+    while (p->next != NULL)         // 有问题
     {
         if(strcmp(id,p->elem.id) == 0)
         {
             NodeInfoCopy(elem,&(p->elem));      // 找到对应ID
+            flag = 1;
             break;
         }
         else
@@ -283,6 +288,11 @@ status LinkListSearchById(linkList list,char *id,ElemType *elem)
         }
     }
     
+    if(flag == 0)
+    {
+        return FALSE;   // 为查找到对应的数据
+    }
+
     return TRUE;
     
 }
