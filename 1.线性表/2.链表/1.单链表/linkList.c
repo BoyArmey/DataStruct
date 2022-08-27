@@ -148,7 +148,7 @@ status LinkListAddFirst(linkList *list, ElemType elem)
 
 /**
  * @brief   链表插入元素
- *          1）新建指针p，指向链表的头结点
+ *          1）新建指针p，指向链表的首元结点
  *          2）将插入下标进行角色转换
  *              程序角度从0开始，用户角度从1开始
  *          3）获取链表长度，并判断插入位置是否合法
