@@ -26,20 +26,16 @@ int main()
     // 保存查找到的结点信息
     ElemType *elem = (ElemType*)malloc(sizeof(ElemType));
 
-    // 追加元素
-    LinkListAddEnd(list,datas[0]);
-    LinkListAddEnd(list,datas[1]);
+    // 尾部追加元素
     LinkListAddEnd(list,datas[2]);
     LinkListAddEnd(list,datas[3]);
     // 输出链表信息
     printf("\n---------------------------尾部添加数据----------------------------\n");
     LinkListShow(*list); 
 
-
-    LinkListAddFirst(list,datas[0]);
+    // 头部追加数据
     LinkListAddFirst(list,datas[1]);
-    LinkListAddFirst(list,datas[2]);
-    LinkListAddFirst(list,datas[3]);
+    LinkListAddFirst(list,datas[0]);
     // 输出链表信息
     printf("\n---------------------------头部添加数据----------------------------\n");
     LinkListShow(*list);        
@@ -47,7 +43,7 @@ int main()
     // 插入数据
     LinkListInsert(list,datas[4],1);        // 头部插入
     LinkListInsert(list,datas[5],3);        // 尾部插入
-    LinkListInsert(list,datas[6],11);        // 中间插入
+    LinkListInsert(list,datas[6],7);        // 中间插入
     // 输出链表信息
     printf("\n---------------------------插入数据----------------------------\n");
     LinkListShow(*list);  
@@ -73,7 +69,7 @@ int main()
         printf("\n未查找到相关结点信息\n");
     }
     // 查找最后一个结点
-    if(LinkListSearchByIndex(*list,11,elem))
+    if(LinkListSearchByIndex(*list,7,elem))
     {
         NodeInfoPrint(*elem);
     }

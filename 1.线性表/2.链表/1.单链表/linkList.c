@@ -84,7 +84,7 @@ status LinkListAddEnd(linkList *list,ElemType elem)
 int LinkListLength(linkList list)
 {
     int length = 0;         // 记录链表长度
-    linkList *p = (&list)->next;    // 1）指向头结点
+    linkList *p = list.next;    // 1）指向头结点
     while (p)
     {
         length += 1;               // 长度加1
@@ -104,7 +104,7 @@ int LinkListLength(linkList list)
  */
 void LinkListShow(linkList list)
 {
-    linkList *p = (&list)->next;    // 1）指向链表的头结点
+    linkList *p = list.next;    // 1）指向链表的头结点
     while (p)
     {
         NodeInfoPrint(p->elem);      // 2）输出结点信息
@@ -219,7 +219,7 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
 status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 {
     int i;  // 循环变量
-    linkList *p = (&list)->next;
+    linkList *p = list.next;
 
     // 1）下标角度转换
     index = index - 1;
@@ -255,7 +255,7 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 
 /**
  * @brief   依据用户ID查找链表数据
- *          1）
+ *          1）新建指针p指向链表头结点
  * 
  * @param list 
  * @param id 
@@ -264,7 +264,11 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
  */
 status LinkListSearchById(linkList list,char *id,ElemType *elem)
 {
+    // 1）将p指向链表头结点
+    linkList *p = list.next;
 
+    
+    
 }
 
 
