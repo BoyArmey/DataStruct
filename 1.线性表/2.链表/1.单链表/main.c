@@ -55,6 +55,10 @@ int main()
     printf("\n---------------------------查找数据----------------------------\n");
     LinkListSearchByIndex(*list,2,&elem);
     NodeInfoPrint(elem);
+    LinkListSearchByIndex(*list,1,&elem);
+    NodeInfoPrint(elem);
+    LinkListSearchByIndex(*list,11,&elem);
+    NodeInfoPrint(elem);
 
 
     return 0;
