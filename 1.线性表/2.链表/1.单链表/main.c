@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <malloc.h>
 #include "status.h"
 #include "utils.h"
 #include "linkList.h"
@@ -23,7 +24,7 @@ int main()
     linkList *list = LinkListInit();
     
     // 保存查找到的结点信息
-    ElemType elem;
+    ElemType *elem = (ElemType*)malloc(sizeof(ElemType));
 
     // 追加元素
     LinkListAddEnd(list,datas[0]);
@@ -53,12 +54,12 @@ int main()
 
 
     printf("\n---------------------------查找数据----------------------------\n");
-    LinkListSearchByIndex(*list,2,&elem);
-    NodeInfoPrint(elem);
-    LinkListSearchByIndex(*list,1,&elem);
-    NodeInfoPrint(elem);
-    LinkListSearchByIndex(*list,11,&elem);
-    NodeInfoPrint(elem);
+    LinkListSearchByIndex(*list,2,elem);
+    NodeInfoPrint(*elem);
+    LinkListSearchByIndex(*list,1,elem);
+    NodeInfoPrint(*elem);
+    LinkListSearchByIndex(*list,11,elem);
+    NodeInfoPrint(*elem);
 
 
     return 0;
