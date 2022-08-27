@@ -253,4 +253,18 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 }
 
 
+/**
+ * @brief   依据用户ID查找链表数据
+ *          1）
+ * 
+ * @param list 
+ * @param id 
+ * @param elem 
+ * @return status 
+ */
+status LinkListSearchById(linkList list,char *id,ElemType *elem)
+{
+
+}
+
 
