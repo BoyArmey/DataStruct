@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#include <string.h>
 #include "utils.h"
 #include "status.h"
 #include "linkList.h"
@@ -256,6 +257,7 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 /**
  * @brief   依据用户ID查找链表数据
  *          1）新建指针p指向链表头结点
+ *          2）遍历链表，对比用户ID是否相同
  * 
  * @param list 
  * @param id 
@@ -267,7 +269,21 @@ status LinkListSearchById(linkList list,char *id,ElemType *elem)
     // 1）将p指向链表头结点
     linkList *p = list.next;
 
+    // 2）遍历链表，对比用户ID是否相同
+    while (p->next != NULL)
+    {
+        if(strcmp(id,p->elem.id) == 0)
+        {
+            NodeInfoCopy(elem,&(p->elem));      // 找到对应ID
+            break;
+        }
+        else
+        {
+             p = p->next;                      // 未找到
+        }
+    }
     
+    return TRUE;
     
 }
 

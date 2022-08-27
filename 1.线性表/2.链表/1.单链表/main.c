@@ -49,7 +49,7 @@ int main()
     LinkListShow(*list);  
 
 
-    printf("\n---------------------------查找数据----------------------------\n");
+    printf("\n---------------------------依据下标查找数据----------------------------\n");
     // 查找中间结点
     if(LinkListSearchByIndex(*list,2,elem))
     {
@@ -78,6 +78,23 @@ int main()
         printf("\n未查找到相关结点信息\n");
     }
 
+    printf("\n---------------------------依据ID查找数据----------------------------\n");
+    if(LinkListSearchById(*list,"0007",elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    if(LinkListSearchById(*list,"0001",elem))
+    {
+        NodeInfoPrint(*elem);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
 
     return 0;
 }
