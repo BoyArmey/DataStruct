@@ -36,7 +36,6 @@ linkList* LinkListInit()
  *          4）使用循环，将指针p定位到链表尾部
  *              while (p->next != NULL)
  *          5）将数据添加到链表尾部
- *          6）释放指针p
  * 
  * @param list 
  * @param elem 
@@ -70,8 +69,6 @@ status LinkListAddEnd(linkList *list,ElemType elem)
     // 5）添加结点
     p->next = node;  
 
-    // 6）释放指针p
-    free(p);
     return TRUE;
 }
 
@@ -166,7 +163,6 @@ status LinkListAddFirst(linkList *list, ElemType elem)
  *          4）创建结点，保存传入的数据
  *          5）查找插入位置，将指针p指向插入位置的前一个元素
  *          6）插入数据
- *          7）释放指针p
  *          
  * 
  * @param list 
@@ -206,8 +202,6 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
     node->next = p->next;
     p->next = node;
     
-    // 7）释放指针p
-    free(p);
     return TRUE;
 }
 
@@ -275,34 +269,33 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
  *          2）设置标志位，检测是否查找到数据
  *          3）遍历链表，对比用户ID是否相同
  *              相同则保存结点信息，不同继续遍历
- *          4）释放指针p
  * 
  * @param list 
  * @param id 
  * @param elem 
  * @return status 
  */
-status LinkListSearchById(linkList list,char *id,ElemType *elem)
+status LinkListSearchById(linkList list,const char *id,ElemType *elem)
 {
     int flag = 0;   // 标记位，记录是否查找到数据
     
     // 1）将p指向链表头结点
     linkList *p = list.next;
 
-
     // 2）遍历链表，对比用户ID是否相同
-    while (p != NULL)         // 有问题
+    while (p != NULL)
     {
-        if(strcmp(id,p->elem.id) == 0)
+        if( strcmp(id,p->elem.id) == 0)
         {
-            NodeInfoCopy(elem,&(p->elem));      // 找到对应ID
             flag = 1;
+            NodeInfoCopy(elem,&(p->elem));      // 找到对应ID
             break;
         }
         else
         {
-             p = p->next;                      // 未找到
-        }
+            // 未找到，继续循环
+            p = p->next; 
+        }                     
     }
     
     if(flag == 0)
@@ -310,7 +303,6 @@ status LinkListSearchById(linkList list,char *id,ElemType *elem)
         return FALSE;   // 为查找到对应的数据
     }
 
-    free(p);        // 释放指针p
     return TRUE;
 }
 

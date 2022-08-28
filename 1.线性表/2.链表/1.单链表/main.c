@@ -24,7 +24,8 @@ int main()
     linkList *list = LinkListInit();
     
     // 保存查找到的结点信息
-    ElemType *elem = (ElemType*)malloc(sizeof(ElemType));
+    ElemType *elemIndex = (ElemType*)malloc(sizeof(ElemType));
+    ElemType *elemId = (ElemType*)malloc(sizeof(ElemType));
 
     // 尾部追加元素
     LinkListAddEnd(list,datas[2]);
@@ -32,14 +33,14 @@ int main()
     // 输出链表信息
     printf("\n---------------------------尾部添加数据----------------------------\n");
     LinkListShow(*list); 
-
+    
     // 头部追加数据
     LinkListAddFirst(list,datas[1]);
     LinkListAddFirst(list,datas[0]);
     // 输出链表信息
     printf("\n---------------------------头部添加数据----------------------------\n");
     LinkListShow(*list);        
-
+    
     // 插入数据
     LinkListInsert(list,datas[4],1);        // 头部插入
     LinkListInsert(list,datas[5],3);        // 尾部插入
@@ -48,61 +49,62 @@ int main()
     printf("\n---------------------------插入数据----------------------------\n");
     LinkListShow(*list);  
 
+    
+    printf("\n---------------------------依据ID查找数据----------------------------\n");
+    if(LinkListSearchById(*list,"0001",elemId))
+    {
+        NodeInfoPrint(*elemId);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    if(LinkListSearchById(*list,"0007",elemId))      
+    {
+        NodeInfoPrint(*elemId);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+    if(LinkListSearchById(*list,"0009",elemId))       // 不存在的结点
+    {
+        NodeInfoPrint(*elemId);
+    }
+    else
+    {
+        printf("\n未查找到相关结点信息\n");
+    }
+
 
     printf("\n---------------------------依据下标查找数据----------------------------\n");
     // 查找中间结点
-    if(LinkListSearchByIndex(*list,2,elem))
+    if(LinkListSearchByIndex(*list,2,elemIndex))
     {
-        NodeInfoPrint(*elem);
+        NodeInfoPrint(*elemIndex);
     }
     else
     {
         printf("\n未查找到相关结点信息\n");
     }
     // 查找第一个结点
-    if(LinkListSearchByIndex(*list,1,elem))
+    if(LinkListSearchByIndex(*list,1,elemIndex))
     {
-        NodeInfoPrint(*elem);
+        NodeInfoPrint(*elemIndex);
     }
     else
     {
         printf("\n未查找到相关结点信息\n");
     }
     // 查找最后一个结点
-    if(LinkListSearchByIndex(*list,7,elem))
+    if(LinkListSearchByIndex(*list,7,elemIndex))
     {
-        NodeInfoPrint(*elem);
+        NodeInfoPrint(*elemIndex);
     }
     else
     {
         printf("\n未查找到相关结点信息\n");
-    }
-
-    printf("\n---------------------------依据ID查找数据----------------------------\n");
-    if(LinkListSearchById(*list,"0001",elem))
-    {
-        NodeInfoPrint(*elem);
-    }
-    else
-    {
-        printf("\n未查找到相关结点信息\n");
-    }
-    if(LinkListSearchById(*list,"0007",elem))
-    {
-        NodeInfoPrint(*elem);
-    }
-    else
-    {
-        printf("\n未查找到相关结点信息\n");
-    }
-    if(LinkListSearchById(*list,"0009",elem))       // 不存在的结点
-    {
-        NodeInfoPrint(*elem);
-    }
-    else
-    {
-        printf("\n未查找到相关结点信息\n");
-    }
-
+    } 
+    
     return 0;
 }
