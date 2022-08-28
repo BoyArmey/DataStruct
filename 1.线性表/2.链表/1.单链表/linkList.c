@@ -295,4 +295,17 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
     return TRUE;
 }
 
+/**
+ * @brief   根据下标删除链表元素
+ *          1）
+ *
+ * @param list 
+ * @param index     下标
+ * @return status 
+ */
+status LinkListDeleteByIndex(linkList *list,int index)
+{
 
+
+    return TRUE;
+}
