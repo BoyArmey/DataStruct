@@ -91,9 +91,6 @@ int LinkListLength(linkList list)
         length += 1;               // 2）长度加1
         p = p->next;              // 3）指向链表的下一个结点
     }
-
-    // 4）释放指针p
-    free(p);
     return length;
 }
 
@@ -103,7 +100,6 @@ int LinkListLength(linkList list)
  *          1）新建指针p，指向链表的头结点
  *          2）使用p进行链表的遍历，输出每个结点的信息
  *          3）每一次遍历完成后，要将p指向下一个结点
- *          4）释放指针p
  * 
  * @param list 
  */
@@ -116,9 +112,6 @@ void LinkListShow(linkList list)
         p = p->next;                // 3）指向链表的下一个结点
     }
     printf("\n当前链表长度为:%d\n",LinkListLength(list));
-    
-    // 4）释放指针p
-    free(p);
 }
 
 /**
@@ -216,7 +209,6 @@ status LinkListInsert(linkList *list, ElemType elem, int index)
  *          4）新建指针p指向头结点，使用循环将p指向查找的结点
  *              首元结点无数据信息，直接指向头结点即可
  *          5）保存查找到的数据
- *          6）释放指针p
  * 
  * 
  * @param list 
@@ -256,9 +248,6 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem)
 
     // 5）保存查找到的结点信息
     NodeInfoCopy(elem,&(p->elem));
-
-    // 6）释放指针p
-    free(p);
     return TRUE;
 }
 
