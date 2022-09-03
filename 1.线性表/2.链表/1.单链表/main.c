@@ -106,13 +106,27 @@ int main()
         printf("\n未查找到相关结点信息\n");
     } 
     
-    // 删除数据
+    // 依据下标删除结点
     printf("\n---------------------------依据下标删除数据----------------------------\n");
     LinkListDeleteByIndex(list,1);      // 删除第一个结点
     LinkListDeleteByIndex(list,2);      // 删除中间结点
-    LinkListDeleteByIndex(list,6);      // 删除最后一个结点
+    LinkListDeleteByIndex(list,5);      // 删除最后一个结点
     LinkListShow(*list);
 
+    // 依据ID删除结点
+    printf("\n---------------------------依据ID删除数据----------------------------\n");
+    // 插入数据，用于删除测试
+    printf("\n删除前：\n");
+    LinkListInsert(list,datas[4],1);
+    LinkListInsert(list,datas[5],3);
+    LinkListInsert(list,datas[6],7);
+    LinkListShow(*list);
+    // 删除操作
+    printf("\n删除后：\n");
+    LinkListDeleteById(list,"0005");    // 删除第一个结点
+    LinkListDeleteById(list,"0006");    // 删除中间结点
+    LinkListDeleteById(list,"0007");    // 删除最后一个结点
+    LinkListShow(*list);
 
 
     return 0;
