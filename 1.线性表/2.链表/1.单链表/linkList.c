@@ -299,7 +299,8 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
  * @brief   根据下标删除链表元素
  *          1）用户下标转换为程序角度下标
  *              用户从1开始，程序从0开始
- *          2）
+ *          2）判断用户输入的下标是否合法：1 <= index <= 链表最大长度
+ *          3）将指针p指向链表被删除结点的前一个结点
  *
  * @param list 
  * @param index     下标
@@ -308,10 +309,40 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
 status LinkListDeleteByIndex(linkList *list,int index)
 {
 
+    // 获取链表长度
+    int length = LinkListLength(*list);
+
+    // 指针p指向首元结点
+    linkList *p = list;
+    // 循环变量
+    int i;
+    // 记录被删除的结点
+    linkList * q = NULL;
+
     // 1）用户下标转换为程序角度下标
     index = index - 1;
-    
 
+    // 2）判断删除下标是否合法
+    if(index < 0 || index > length)
+    {
+        printf("\n输入位置不合法！\n");
+        return FALSE;
+    }
+
+    // 将指针p指向被删除结点的头一个结点
+    for(i=0; i < index; i++)
+    {
+        p = p->next;
+    }
+    
+    // 将指针q指向被删除的结点
+    q = p->next;
+
+    // 修改指针域
+    p->next = q->next;
+    
+    // 释放被删除结点的内存
+    free(q);
 
     return TRUE;
 }
