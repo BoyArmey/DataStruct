@@ -356,6 +356,7 @@ status LinkListDeleteByIndex(linkList *list,int index)
  * @brief   根据ID删除链表元素
  *          2）指针p指向头结点，遍历列表，查找对应id所在的结点
  *          3）指针q指向首元结点，遍历列表，查找对应id所在的结点的前一个结点
+ *          4）修改被删除结点前一个结点的指针域，将其指向被删除结点的下一个结点
  * 
  * @param list 
  * @param id    待删除结点的ID
@@ -368,13 +369,14 @@ status LinkListDeleteById(linkList *list,const char* id)
     linkList *p = list->next;
     // 指针q指向首元结点
     linkList *q = list;
+    
 
     while (p)
     {
         if(strcmp(p->elem.id,id) == 0)
         {
-            q->next = p->next;
-            free(p);
+            q->next = p->next;  // 指向删除结点的下一个结点
+            free(p);        // 释放对应id的结点内存
             return TRUE;
         }
 
