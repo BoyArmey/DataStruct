@@ -407,3 +407,15 @@ status LinkListIsEmpty(linkList list)
     return FALSE;      // 链表不为空
     
 }
+
+/**
+ * @brief   链表逆序
+ *          
+ * 
+ * @param list 
+ * @return status 
+ */
+status LinkLisInverse(linkList *list)
+{
+
+}
