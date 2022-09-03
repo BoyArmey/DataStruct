@@ -119,7 +119,7 @@ int main()
     printf("\n删除前：\n");
     LinkListInsert(list,datas[4],1);
     LinkListInsert(list,datas[5],3);
-    LinkListInsert(list,datas[6],7);
+    LinkListInsert(list,datas[6],7); 
     LinkListShow(*list);
     // 删除操作
     printf("\n删除后：\n");

@@ -354,7 +354,6 @@ status LinkListDeleteByIndex(linkList *list,int index)
 
 /**
  * @brief   根据ID删除链表元素
- *          1）检测id释放存在链表中
  *          2）指针p指向头结点，遍历列表，查找对应id所在的结点
  *          3）指针q指向首元结点，遍历列表，查找对应id所在的结点的前一个结点
  * 
@@ -369,14 +368,6 @@ status LinkListDeleteById(linkList *list,const char* id)
     linkList *p = list->next;
     // 指针q指向首元结点
     linkList *q = list;
-
-    // 1）检测id释放存在链表中
-    ElemType elem;
-    if(LinkListSearchById(*list,id,&elem))
-    {
-        printf("\n不存在相应信息，请重新确认输入的id\n");
-        return FALSE;
-    }
 
     while (p)
     {
