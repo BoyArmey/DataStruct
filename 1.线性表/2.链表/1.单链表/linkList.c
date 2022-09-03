@@ -297,7 +297,9 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
 
 /**
  * @brief   根据下标删除链表元素
- *          1）
+ *          1）用户下标转换为程序角度下标
+ *              用户从1开始，程序从0开始
+ *          2）
  *
  * @param list 
  * @param index     下标
@@ -305,6 +307,10 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
  */
 status LinkListDeleteByIndex(linkList *list,int index)
 {
+
+    // 1）用户下标转换为程序角度下标
+    index = index - 1;
+    
 
 
     return TRUE;
