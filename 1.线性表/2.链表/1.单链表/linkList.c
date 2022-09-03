@@ -380,8 +380,8 @@ status LinkListDeleteById(linkList *list,const char* id)
             return TRUE;
         }
 
-        q = q->next;
-        p = p->next;
+        q = q->next;    // 移动指针q
+        p = p->next;    // 移动指针p
     }
 
     return FALSE;
