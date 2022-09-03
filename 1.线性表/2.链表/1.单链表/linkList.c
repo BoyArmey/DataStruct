@@ -387,3 +387,23 @@ status LinkListDeleteById(linkList *list,const char* id)
     return FALSE;
 
 }
+
+/**
+ * @brief       判断链表为空
+ *              首元结点的指针域为NULL，链表为空返回TRUE;否则返回FASLE
+ * 
+ * @param list 
+ * @return status 
+ */
+status LinkListIsEmpty(linkList list)
+{
+    if (list.next == NULL)
+    {
+        printf("\n链表为空链表\n");
+        return TRUE;        // 链表为空
+    }
+    
+    printf("\n链表非空\n");
+    return FALSE;      // 链表不为空
+    
+}

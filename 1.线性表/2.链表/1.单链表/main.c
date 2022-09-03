@@ -22,6 +22,7 @@ int main()
 
     // 初始化链表
     linkList *list = LinkListInit();
+    // LinkListIsEmpty(*list);      // 测试链表是否为空
     
     // 保存查找到的结点信息
     ElemType *elemIndex = (ElemType*)malloc(sizeof(ElemType));
@@ -127,6 +128,9 @@ int main()
     LinkListDeleteById(list,"0006");    // 删除中间结点
     LinkListDeleteById(list,"0007");    // 删除最后一个结点
     LinkListShow(*list);
+
+    // 判断列表是否为空
+    LinkListIsEmpty(*list);
 
 
     return 0;

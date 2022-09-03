@@ -45,6 +45,8 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem);
 status LinkListDeleteByIndex(linkList *list,int index);
 // 根据ID删除链表元素
 status LinkListDeleteById(linkList *list,const char* id);
+// 判断链表为空
+status LinkListIsEmpty(linkList list);
 
 
 
