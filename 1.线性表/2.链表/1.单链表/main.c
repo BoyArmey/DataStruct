@@ -106,5 +106,13 @@ int main()
         printf("\n未查找到相关结点信息\n");
     } 
     
+    // 删除数据
+    printf("\n---------------------------依据下标删除数据----------------------------\n");
+    LinkListDeleteByIndex(list,1);
+    LinkListDeleteByIndex(list,6);
+    LinkListShow(*list);
+
+
+
     return 0;
 }

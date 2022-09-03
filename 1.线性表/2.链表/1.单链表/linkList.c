@@ -301,6 +301,10 @@ status LinkListSearchById(linkList list,const char *id,ElemType *elem)
  *              用户从1开始，程序从0开始
  *          2）判断用户输入的下标是否合法：1 <= index <= 链表最大长度
  *          3）将指针p指向链表被删除结点的前一个结点
+ *          4）将指针q指向被删除的结点
+ *          5）修改指针域 
+ *              p->next = q->next
+ *          6）释放被删除的结点的内存空间
  *
  * @param list 
  * @param index     下标
@@ -345,4 +349,28 @@ status LinkListDeleteByIndex(linkList *list,int index)
     free(q);
 
     return TRUE;
+}
+
+
+/**
+ * @brief   根据ID删除链表元素
+ *          1）检测id释放存在链表中
+ * 
+ * @param list 
+ * @param id    待删除结点的ID
+ * @return status 
+ */
+status LinkListDeleteById(linkList *list,const char* id)
+{
+
+    // 1）检测id释放存在链表中
+    ElemType elem;
+    if(LinkListSearchById(*list,id,&elem))
+    {
+        printf("\n不存在相应信息，请重新确认输入的id\n");
+        return FALSE;
+    }
+
+    
+
 }

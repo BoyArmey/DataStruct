@@ -43,7 +43,8 @@ status LinkListSearchByIndex(linkList list,int index,ElemType *elem);
 status LinkListSearchById(linkList list,const char *id,ElemType *elem);
 // 根据下标删除链表元素
 status LinkListDeleteByIndex(linkList *list,int index);
-
+// 根据ID删除链表元素
+status LinkListDeleteById(linkList *list,const char* id);
 
 
 
