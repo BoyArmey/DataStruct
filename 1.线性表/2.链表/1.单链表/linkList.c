@@ -355,6 +355,7 @@ status LinkListDeleteByIndex(linkList *list,int index)
 /**
  * @brief   根据ID删除链表元素
  *          1）检测id释放存在链表中
+ *          2）指针p指向头结点，遍历列表，查找对应的id
  * 
  * @param list 
  * @param id    待删除结点的ID
@@ -362,6 +363,9 @@ status LinkListDeleteByIndex(linkList *list,int index)
  */
 status LinkListDeleteById(linkList *list,const char* id)
 {
+
+    // 指针p指向头结点
+    linkList *p = list->next;
 
     // 1）检测id释放存在链表中
     ElemType elem;
@@ -371,6 +375,17 @@ status LinkListDeleteById(linkList *list,const char* id)
         return FALSE;
     }
 
+    while (p)
+    {
+        if(strcmp(&(p->elem.id),id) == 0)
+        {
+            
+        }
+
+
+        p = p->next;
+    }
     
+
 
 }
