@@ -108,8 +108,9 @@ int main()
     
     // 删除数据
     printf("\n---------------------------依据下标删除数据----------------------------\n");
-    LinkListDeleteByIndex(list,1);
-    LinkListDeleteByIndex(list,6);
+    LinkListDeleteByIndex(list,1);      // 删除第一个结点
+    LinkListDeleteByIndex(list,2);      // 删除中间结点
+    LinkListDeleteByIndex(list,6);      // 删除最后一个结点
     LinkListShow(*list);
 
 
