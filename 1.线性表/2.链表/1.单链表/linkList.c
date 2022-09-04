@@ -410,12 +410,25 @@ status LinkListIsEmpty(linkList list)
 
 /**
  * @brief   链表逆序
+ *          创建
  *          
  * 
  * @param list 
  * @return status 
  */
-status LinkLisInverse(linkList *list)
+linkList* LinkLisInverse(linkList *list)
 {
+    linkList *pre = NULL;
+    linkList *cur = list->next;
+    linkList *nt = list->next->next;
 
+    while (cur)
+    {
+        cur->next = pre;
+        pre = cur;
+        cur = nt;
+
+        nt = nt->next;
+    }
+    
 }

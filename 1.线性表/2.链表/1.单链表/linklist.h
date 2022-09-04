@@ -48,7 +48,7 @@ status LinkListDeleteById(linkList *list,const char* id);
 // 判断链表为空
 status LinkListIsEmpty(linkList list);
 // 链表逆序
-status LinkLisInverse(linkList *list);
+linkList* LinkLisInverse(linkList *list);
 
 
 
