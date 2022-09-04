@@ -420,15 +420,16 @@ linkList* LinkLisInverse(linkList *list)
 {
     linkList *pre = NULL;
     linkList *cur = list->next;
-    linkList *nt = list->next->next;
+    linkList *nt = NULL;
 
-    while (cur)
+    while (cur != NULL)
     {
-        cur->next = pre;
         pre = cur;
         cur = nt;
-
         nt = nt->next;
+
+        cur->next = pre;
     }
-    
+    list = cur;
+    return list;
 }

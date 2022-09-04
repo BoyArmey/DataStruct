@@ -22,6 +22,7 @@ int main()
 
     // 初始化链表
     linkList *list = LinkListInit();
+    linkList *list1 = LinkListInit();
     // LinkListIsEmpty(*list);      // 测试链表是否为空
     
     // 保存查找到的结点信息
@@ -131,6 +132,12 @@ int main()
 
     // 判断列表是否为空
     LinkListIsEmpty(*list);
+
+
+    // 链表逆序
+    printf("\n---------------------------链表逆序----------------------------\n");
+    list1 = LinkLisInverse(list);       // 有问题
+    LinkListShow(*list1);
 
 
     return 0;
