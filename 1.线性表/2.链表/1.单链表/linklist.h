@@ -49,6 +49,8 @@ status LinkListDeleteById(linkList *list,const char* id);
 status LinkListIsEmpty(linkList list);
 // 链表逆序
 linkList* LinkLisInverse(linkList *list);
+// 链表销毁
+status LinkListDestroy(linkList *list);
 
 
 

@@ -429,3 +429,14 @@ linkList* LinkLisInverse(linkList *list)
     }
     return list;
 }
+
+/**
+ * @brief   链表销毁
+ * 
+ * @param list 
+ * @return status 
+ */
+status LinkListDestroy(linkList *list)
+{
+
+}

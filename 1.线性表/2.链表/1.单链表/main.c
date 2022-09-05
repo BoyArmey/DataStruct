@@ -138,5 +138,9 @@ int main()
     printf("\n---------------------------链表逆序----------------------------\n");
     list1 = LinkLisInverse(list);       // 有问题
     LinkListShow(*list1);
+
+    // 销毁链表
+
+
     return 0;
 }
