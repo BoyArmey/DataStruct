@@ -29,7 +29,7 @@ ElemType GetElement()
     //声明结点
     ElemType element;
     printf("请输入ID:");
-    scanf("%d",&element.id);
+    scanf("%s",element.id);
     printf("请输入姓名:");
     scanf("%s",element.name);
     printf("请输入年龄:");
