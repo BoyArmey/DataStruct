@@ -140,6 +140,14 @@ int main()
     LinkListShow(*list1);
 
     // 销毁链表
+    if(LinkListDestroy(list))
+    {
+        printf("\n链表销毁成功!\n");
+    }
+    else
+    {
+        printf("\n链表销毁失败!\n");
+    }
 
 
     return 0;
