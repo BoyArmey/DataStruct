@@ -432,11 +432,28 @@ linkList* LinkLisInverse(linkList *list)
 
 /**
  * @brief   链表销毁
+ *          1）链表为空，返回FALSE
  * 
  * @param list 
  * @return status 
  */
 status LinkListDestroy(linkList *list)
 {
+    linkList *p = list->next;       // 指向首元结点
+    linkList *q = NULL;
 
+    if(list->next == NULL)
+    {
+        printf("\n链表为空，销失败\n");
+        return FALSE;
+    }
+
+    while (p)
+    {
+            q = p;          // 将q指向p
+            p = p->next;    // 指针p指向下一个结点
+            free(q);        // 释放q
+    }
+    return TRUE;
+    
 }
