@@ -454,6 +454,8 @@ status LinkListDestroy(linkList *list)
             p = p->next;    // 指针p指向下一个结点
             free(q);        // 释放q
     }
+    
+    list->next = NULL;
     return TRUE;
     
 }
