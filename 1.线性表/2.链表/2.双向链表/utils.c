@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "utils.h"
-#include "sequenceList.h"
+#include "DuLinkList.h"
 
 
 /**
