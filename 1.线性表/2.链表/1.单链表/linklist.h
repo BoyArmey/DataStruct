@@ -1,5 +1,5 @@
-#ifndef _LINKLIST_H
-#define _LINKLIST_H
+#ifndef _LINKLIST_H_
+#define _LINKLIST_H_
 
 #include "status.h"
 

@@ -1,5 +1,5 @@
-#ifndef _STATUS_H
-#define _STATUS_H
+#ifndef _STATUS_H_
+#define _STATUS_H_
 
 #define TRUE  1       // 真为1
 #define FALSE 0       // 假为0

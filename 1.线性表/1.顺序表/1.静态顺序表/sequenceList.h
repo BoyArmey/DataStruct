@@ -1,5 +1,5 @@
-#ifndef _SEQUENCELIST_H
-#define _SEQUENCELIST_H
+#ifndef _SEQUENCELIST_H_
+#define _SEQUENCELIST_H_
 
 #include "status.h"
 
