@@ -1,5 +1,6 @@
 #ifndef _DULINKLIST_H_
-#ifdef _DULINKLIST_H_
+#define _DULINKLIST_H_
+
 
 //定义链表中结点存储数据的类型
 typedef struct 
