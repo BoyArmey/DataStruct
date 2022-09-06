@@ -9,5 +9,11 @@ typedef struct
     int age;          //年龄
 }ElemType;
 
+struct DuLinkList
+{
+    /* data */
+};
+
+
 
 #endif
