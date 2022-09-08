@@ -21,8 +21,10 @@ typedef struct Node DuLinkListNode;       // 结点
 typedef struct Node *DuLinkList;         // 双向链表指针
 
 
-
-
+// 初始化循环链表
+DuLinkList DuLinkListInit(DuLinkList list);
+// 循环链表插入数据
+DuLinkList DuLinkListInsert(DuLinkList list, ElemType elem);
 
 
 #endif
