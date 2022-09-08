@@ -10,10 +10,16 @@ typedef struct
     int age;          //年龄
 }ElemType;
 
-struct DuLinkList
+struct Node
 {
-    /* data */
+    ElemType elem;
+    struct Node *prior;     // 前驱指针
+    struct Node *next;      // 后继指针
 };
+
+typedef struct Node DuLinkListNode;       // 结点
+typedef struct Node *DuLinkList;         // 双向链表指针
+
 
 
 
