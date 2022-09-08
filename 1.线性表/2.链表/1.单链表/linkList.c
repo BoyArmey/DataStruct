@@ -419,7 +419,7 @@ status LinkListIsEmpty(linkList list)
 linkList* LinkLisInverse(linkList *list)
 {
     linkList* p = list->next;
-    linkList* q;
+    linkList* q = NULL;
     list->next = NULL;
     while (p != NULL) {
         q = p;
